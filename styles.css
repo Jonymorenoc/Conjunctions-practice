@@ -1,11 +1,12 @@
 :root {
-    --primary: #2A4270; /* Dark Blue */
-    --secondary: #FF693A; /* Orange */
-    --accent: #FF693A; /* Using Orange for accents */
-    --background: #F6F4EE; /* Pearl White */
-    --text: #2A4270; /* Dark Blue for text */
-    --button-hover: #FF8C00; /* Darker Orange */
-    --button-active: #E67600; /* Even Darker Orange */
+    --primary: #2A4270; /* Azul Oscuro */
+    --secondary: #FF693A; /* Naranja */
+    --accent: #FF693A; /* Usando Naranja para acentos */
+    --background: #F6F4EE; /* Perla Blanco */
+    --text-dark: #000000; /* Negro para textos oscuros */
+    --text-light: #FFFFFF; /* Blanco para textos claros */
+    --button-hover: #FF5722; /* Naranja más oscuro para hover */
+    --button-active: #E64A19; /* Naranja aún más oscuro para activo */
     --feedback-correct: #C8F7C5;
     --feedback-incorrect: #FFD8D2;
     --feedback-border-correct: #2ECC71;
@@ -21,7 +22,7 @@
 body {
     font-family: 'Comic Neue', cursive;
     background: var(--background);
-    color: var(--text);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
@@ -42,7 +43,7 @@ header {
 }
 
 h1 {
-    color: white;
+    color: var(--text-light);
     font-size: 2.5rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
@@ -61,7 +62,7 @@ h1 {
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     font-size: 1.2rem;
-    color: var(--text);
+    color: var(--text-dark);
 }
 
 .menu-grid {
@@ -83,7 +84,7 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: white;
+    color: var(--text-light);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
@@ -102,7 +103,7 @@ h1 {
 .lesson-section {
     display: none;
     padding: 2rem;
-    background: white;
+    background: var(--background);
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
@@ -111,7 +112,7 @@ h1 {
     margin: 1.5rem 0;
     padding: 1.5rem;
     border-radius: 10px;
-    background: var(--background);
+    background: #FFFFFF;
     position: relative;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     transition: transform 0.2s;
@@ -140,17 +141,17 @@ h1 {
     padding: 0.8rem;
     border: 2px solid var(--secondary);
     border-radius: 8px;
-    background: white;
+    background: #FFFFFF;
     cursor: pointer;
     transition: background 0.2s ease, color 0.2s ease;
     font-size: 1rem;
     text-align: center;
-    color: var(--text);
+    color: var(--text-dark);
 }
 
 .option-btn:hover:not(:disabled) {
     background: var(--secondary);
-    color: white;
+    color: var(--text-light);
 }
 
 .option-btn:disabled {
@@ -164,7 +165,7 @@ h1 {
     border-radius: 8px;
     font-size: 1rem;
     width: 100%;
-    color: var(--text);
+    color: var(--text-dark);
 }
 
 .submit-btn {
@@ -173,7 +174,7 @@ h1 {
     border: none;
     border-radius: 8px;
     background: var(--secondary);
-    color: white;
+    color: var(--text-light);
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
     font-size: 1rem;
@@ -201,13 +202,13 @@ h1 {
 .feedback.correct {
     background: var(--feedback-correct);
     border: 2px solid var(--feedback-border-correct);
-    color: #000551;
+    color: var(--text-dark);
 }
 
 .feedback.incorrect {
     background: var(--feedback-incorrect);
     border: 2px solid var(--feedback-border-incorrect);
-    color: #000551;
+    color: var(--text-dark);
 }
 
 .try-again-btn {
@@ -216,7 +217,7 @@ h1 {
     border: none;
     border-radius: 8px;
     background: var(--secondary);
-    color: white;
+    color: var(--text-light);
     cursor: pointer;
     transition: background 0.3s ease;
     font-size: 1rem;
@@ -227,12 +228,12 @@ h1 {
 }
 
 .explanation {
-    background: #F6F4EE;
+    background: #FFFFFF;
     padding: 1.5rem;
     border-radius: 10px;
     margin: 1rem 0;
     border-left: 5px solid var(--secondary);
-    color: var(--text);
+    color: var(--text-dark);
 }
 
 .back-btn {
@@ -244,7 +245,7 @@ h1 {
     margin-bottom: 1rem;
     transition: background 0.3s ease, transform 0.2s ease;
     font-size: 1rem;
-    color: white;
+    color: var(--text-light);
 }
 
 .back-btn:hover {
@@ -258,7 +259,7 @@ footer {
     padding: 1rem;
     background-color: var(--primary);
     border-radius: 15px;
-    color: white;
+    color: var(--text-light);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
