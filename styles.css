@@ -55,6 +55,7 @@ h1 {
 }
 
 .bubble {
+    align: center;
     background: var(--accent);
     padding: 1rem 1.5rem;
     border-radius: 15px;
