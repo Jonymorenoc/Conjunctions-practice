@@ -1,9 +1,9 @@
 :root {
-    --primary: #000551; /* Dark Blue */
-    --secondary: #FFA500; /* Orange */
-    --accent: #FFA500; /* Using Orange for accents */
+    --primary: #2A4270; /* Dark Blue */
+    --secondary: #FF693A; /* Orange */
+    --accent: #FF693A; /* Using Orange for accents */
     --background: #F6F4EE; /* Pearl White */
-    --text: #000551; /* Dark Blue for text */
+    --text: #2A4270; /* Dark Blue for text */
     --button-hover: #FF8C00; /* Darker Orange */
     --button-active: #E67600; /* Even Darker Orange */
     --feedback-correct: #C8F7C5;
