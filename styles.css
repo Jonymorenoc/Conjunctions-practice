@@ -4,127 +4,238 @@
     --accent: #FFE66D;
     --background: #F7FFF7;
     --text: #2F3061;
+    --button-hover: #FF8B8B;
+    --button-active: #FF5A5A;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    -webkit-text-size-adjust: 100%;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
-                 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Comic Neue', cursive;
     background: var(--background);
     color: var(--text);
     line-height: 1.6;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
-    width: 100%;
-    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
     min-height: 100vh;
 }
 
 header {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     padding: 1rem;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
-    border-radius: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 h1 {
     color: white;
-    font-size: 1.8rem;
-    margin: 10px 0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .emoji-header {
-    font-size: 2rem;
-    margin: 10px 0;
+    font-size: 3rem;
+    margin: 1rem 0;
+    animation: bounce 2s infinite;
 }
 
-/* Mobile-first menu */
+.bubble {
+    background: var(--accent);
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+}
+
 .menu-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 15px 0;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
 .menu-btn {
     background: white;
-    border: 2px solid var(--secondary);
-    border-radius: 12px;
-    padding: 18px;
-    font-size: 1.1rem;
+    border: none;
+    border-radius: 15px;
+    padding: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    width: 100%;
-    -webkit-appearance: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-height: 100px;
+}
+
+.menu-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    background: var(--button-hover);
+}
+
+.menu-btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    background: var(--button-active);
 }
 
 .lesson-section {
     display: none;
-    padding: 15px;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .exercise-card {
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 12px;
-    background: white;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 15px;
+    background: var(--background);
+    position: relative;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.exercise-card:hover {
+    transform: scale(1.02);
+}
+
+.exercise-card::before {
+    content: "✨";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 1.5rem;
 }
 
 .options-grid {
     display: grid;
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
     margin: 1rem 0;
 }
 
 .option-btn {
-    padding: 14px;
+    padding: 0.8rem;
+    border: 2px solid var(--secondary);
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.option-btn:hover {
+    background: var(--secondary);
+    color: white;
+}
+
+.feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    animation: popIn 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+}
+
+.correct {
+    background: #C8F7C5;
+    border: 2px solid #2ECC71;
+}
+
+.incorrect {
+    background: #FFD8D2;
+    border: 2px solid #E74C3C;
+}
+
+.explanation {
+    background: #E8F4F8;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1rem 0;
+    border-left: 5px solid var(--secondary);
+}
+
+.back-btn {
+    background: var(--accent);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease;
     font-size: 1rem;
 }
 
-/* Desktop adjustments */
-@media (min-width: 768px) {
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 25px;
-    }
-    
-    h1 {
-        font-size: 2.2rem;
-    }
-    
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    
-    .menu-btn {
-        padding: 20px;
-        font-size: 1.2rem;
-    }
+.back-btn:hover {
+    background: #FFD700;
 }
 
-/* iPhone landscape */
-@media (max-width: 667px) and (orientation: landscape) {
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes popIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
     .container {
         padding: 10px;
     }
-    
+
     h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
-    
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
     .menu-btn {
-        padding: 12px;
+        padding: 1rem;
+        min-height: 80px;
+    }
+
+    .emoji-header {
+        font-size: 2.5rem;
+    }
+
+    .bubble {
+        font-size: 1rem;
+    }
+
+    .option-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    .exercise-card {
+        padding: 1rem;
+    }
+
+    .back-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 }
