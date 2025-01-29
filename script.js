@@ -9,9 +9,9 @@ const lessons = {
                 <strong>OR</strong> - Shows choices<br>
                 <strong>BUT</strong> - Shows contrast</p>
                 <div class="example">
-                    <p>🐵 "Monkeys eat bananas <u>and</u> jump"<br>
+                    <p>🐵 "Monkeys eat bananas <u>and</u> jump."<br>
                     🦁 "Lions <u>or</u> tigers?"<br>
-                    🐻 "Big <u>but</u> friendly"</p>
+                    🐻 "Big <u>but</u> friendly."</p>
                 </div>
             </div>`,
         exercises: [
@@ -51,7 +51,7 @@ const lessons = {
             </div>`,
         exercises: [
             // Existing exercises
-            {q: "___ is crying? 😢", o: ["Why", "Who", "Where"], a: "Why"},
+            {q: "___ is crying? 😢", o: ["Why", "Who", "Where"], a: "Who"},
             {q: "___ is backpack? 🎒", o: ["Where", "What", "When"], a: "Where"},
             {q: "___ is she doing? 📚", o: ["What", "Who", "Why"], a: "What"},
             {q: "___ in kitchen? 👨🍳", o: ["Who", "Where", "When"], a: "Who"},
@@ -140,7 +140,7 @@ const lessons = {
             `<div class="explanation">
                 <h3>Saying "Not Now" 🙅‍♀️</h3>
                 <p>Add <strong>not</strong> before verb+ing<br>
-                Example: "They <u>are not</u> watching"</p>
+                Example: "They <u>are not</u> watching."</p>
             </div>`,
         exercises: [
             // Existing exercises
@@ -204,10 +204,15 @@ function showLesson(lessonKey) {
             ${lesson.exercises.map((ex, index) => `
                 <div class="exercise-card">
                     <p>${ex.q}</p>
+                    ${ex.o ? `
                     <div class="options-grid">
-                        ${ex.o ? ex.o.map(option => `<button class="option-btn">${option}</button>`).join('') : ''}
-                        ${ex.t === 'text' ? `<input type="text" class="text-input" placeholder="Type your answer">` : ''}
+                        ${ex.o.map(option => `<button class="option-btn">${option}</button>`).join('')}
                     </div>
+                    ` : `
+                    <div class="options-grid">
+                        <input type="text" class="text-input" placeholder="Type your answer">
+                    </div>
+                    `}
                     <div class="feedback" style="display:none;"></div>
                 </div>
             `).join('')}
@@ -227,12 +232,15 @@ function showLesson(lessonKey) {
             const exerciseCard = btn.closest('.exercise-card');
             const feedback = exerciseCard.querySelector('.feedback');
             const currentExercise = lesson.exercises[idx];
-            if (btn.textContent.toLowerCase() === currentExercise.a.toLowerCase()) {
+            const selectedAnswer = btn.textContent.trim().toLowerCase();
+            const correctAnswer = currentExercise.a.trim().toLowerCase();
+
+            if (selectedAnswer === correctAnswer) {
                 feedback.textContent = "✅ Correct!";
                 feedback.classList.add('correct');
                 feedback.classList.remove('incorrect');
             } else {
-                feedback.textContent = "❌ Incorrect! The correct answer is: " + currentExercise.a;
+                feedback.textContent = `❌ Incorrect! The correct answer is: "${currentExercise.a}"`;
                 feedback.classList.add('incorrect');
                 feedback.classList.remove('correct');
             }
@@ -247,18 +255,47 @@ function showLesson(lessonKey) {
                 const exerciseCard = input.closest('.exercise-card');
                 const feedback = exerciseCard.querySelector('.feedback');
                 const currentExercise = lesson.exercises[idx];
-                if (input.value.trim().toLowerCase() === currentExercise.a.toLowerCase()) {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = currentExercise.a.trim().toLowerCase();
+
+                if (userAnswer === correctAnswer) {
                     feedback.textContent = "✅ Correct!";
                     feedback.classList.add('correct');
                     feedback.classList.remove('incorrect');
                 } else {
-                    feedback.textContent = "❌ Incorrect! The correct answer is: " + currentExercise.a;
+                    feedback.textContent = `❌ Incorrect! The correct answer is: "${currentExercise.a}"`;
                     feedback.classList.add('incorrect');
                     feedback.classList.remove('correct');
                 }
                 feedback.style.display = 'block';
                 input.value = '';
             }
+        });
+
+        // Optional: Add a submit button for accessibility
+        const submitBtn = document.createElement('button');
+        submitBtn.textContent = "Submit";
+        submitBtn.classList.add('submit-btn');
+        exerciseCard.appendChild(submitBtn);
+
+        submitBtn.addEventListener('click', () => {
+            const exerciseCard = submitBtn.closest('.exercise-card');
+            const feedback = exerciseCard.querySelector('.feedback');
+            const currentExercise = lesson.exercises[idx];
+            const userAnswer = exerciseCard.querySelector('.text-input').value.trim().toLowerCase();
+            const correctAnswer = currentExercise.a.trim().toLowerCase();
+
+            if (userAnswer === correctAnswer) {
+                feedback.textContent = "✅ Correct!";
+                feedback.classList.add('correct');
+                feedback.classList.remove('incorrect');
+            } else {
+                feedback.textContent = `❌ Incorrect! The correct answer is: "${currentExercise.a}"`;
+                feedback.classList.add('incorrect');
+                feedback.classList.remove('correct');
+            }
+            feedback.style.display = 'block';
+            exerciseCard.querySelector('.text-input').value = '';
         });
     });
 }
