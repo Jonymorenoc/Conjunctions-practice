@@ -2,10 +2,10 @@
     --primary: #1E90FF; /* Dodger Blue */
     --secondary: #FFA500; /* Orange */
     --accent: #FFB347; /* Light Orange */
-    --background: #E0F7FA; /* Light Blue */
+    --background: #F5F5F5; /* Pearl White */
     --text: #2F3061; /* Dark Blue */
     --button-hover: #1C86EE; /* Slightly darker blue */
-    --button-active: #FFA07A; /* Light Salmon */
+    --button-active: #FF8C00; /* Dark Orange */
     --feedback-correct: #C8F7C5;
     --feedback-incorrect: #FFD8D2;
     --feedback-border-correct: #2ECC71;
@@ -36,7 +36,7 @@ header {
     text-align: center;
     margin-bottom: 2rem;
     padding: 1rem;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    background-color: var(--primary);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
@@ -72,7 +72,7 @@ h1 {
 
 .menu-btn {
     background: white;
-    border: none;
+    border: 2px solid var(--secondary);
     border-radius: 15px;
     padding: 1.5rem;
     font-size: 1.2rem;
@@ -84,18 +84,20 @@ h1 {
     gap: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     min-height: 100px;
+    color: var(--text);
 }
 
 .menu-btn:hover {
+    background: var(--secondary);
+    color: white;
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    background: var(--button-hover);
 }
 
 .menu-btn:active {
+    background: var(--button-active);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    background: var(--button-active);
 }
 
 .lesson-section {
@@ -144,6 +146,7 @@ h1 {
     transition: all 0.2s ease;
     font-size: 1rem;
     text-align: center;
+    color: var(--text);
 }
 
 .option-btn:hover:not(:disabled) {
@@ -177,7 +180,7 @@ h1 {
 }
 
 .submit-btn:hover:not(:disabled) {
-    background: var(--primary);
+    background: var(--button-active);
 }
 
 .submit-btn:disabled {
@@ -209,7 +212,7 @@ h1 {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 10px;
-    background: #FFA500; /* Orange color */
+    background: var(--secondary); /* Orange color */
     color: white;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -217,7 +220,7 @@ h1 {
 }
 
 .try-again-btn:hover {
-    background: #FF8C00; /* Darker orange */
+    background: var(--button-active); /* Darker orange */
 }
 
 .explanation {
@@ -229,7 +232,7 @@ h1 {
 }
 
 .back-btn {
-    background: var(--accent);
+    background: var(--secondary);
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 10px;
@@ -237,17 +240,18 @@ h1 {
     margin-bottom: 1rem;
     transition: background 0.3s ease;
     font-size: 1rem;
+    color: white;
 }
 
 .back-btn:hover {
-    background: #FFD700;
+    background: var(--button-active);
 }
 
 footer {
     text-align: center;
     margin-top: 2rem;
     padding: 1rem;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    background-color: var(--primary);
     border-radius: 20px;
     color: white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
