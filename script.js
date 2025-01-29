@@ -10,7 +10,7 @@ const lessons = {
                 <strong>BUT</strong> - Shows contrast</p>
                 <div class="example">
                     <p>🐵 "Monkeys eat bananas <u>and</u> jump."<br>
-                    🦁 "Lions <u>or</u> tigers?"<br>
+                    🦁 "Do you like Lions <u>or</u> tigers?"<br>
                     🐻 "Big <u>but</u> friendly."</p>
                 </div>
             </div>`,
