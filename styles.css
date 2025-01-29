@@ -6,6 +6,10 @@
     --text: #2F3061;
     --button-hover: #FF8B8B;
     --button-active: #FF5A5A;
+    --feedback-correct: #C8F7C5;
+    --feedback-incorrect: #FFD8D2;
+    --feedback-border-correct: #2ECC71;
+    --feedback-border-incorrect: #E74C3C;
 }
 
 * {
@@ -190,14 +194,30 @@ h1 {
     text-align: center;
 }
 
-.correct {
-    background: #C8F7C5;
-    border: 2px solid #2ECC71;
+.feedback.correct {
+    background: var(--feedback-correct);
+    border: 2px solid var(--feedback-border-correct);
 }
 
-.incorrect {
-    background: #FFD8D2;
-    border: 2px solid #E74C3C;
+.feedback.incorrect {
+    background: var(--feedback-incorrect);
+    border: 2px solid var(--feedback-border-incorrect);
+}
+
+.try-again-btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background: #FFA500; /* Orange color */
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+}
+
+.try-again-btn:hover {
+    background: #FF8C00; /* Darker orange */
 }
 
 .explanation {
@@ -272,6 +292,11 @@ h1 {
     .submit-btn {
         font-size: 0.9rem;
         padding: 0.5rem 0.8rem;
+    }
+
+    .try-again-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.7rem;
     }
 
     .exercise-card {
