@@ -1,12 +1,12 @@
 :root {
-    --primary: #2A4270; /* Azul Oscuro */
-    --secondary: #FF693A; /* Naranja */
-    --accent: #FF693A; /* Usando Naranja para acentos */
-    --background: #F6F4EE; /* Perla Blanco */
-    --text-dark: #000000; /* Negro para textos oscuros */
-    --text-light: #FFFFFF; /* Blanco para textos claros */
-    --button-hover: #FF5722; /* Naranja más oscuro para hover */
-    --button-active: #E64A19; /* Naranja aún más oscuro para activo */
+    --primary: #2A4270; /* Dark Blue */
+    --secondary: #FF693A; /* Bright Orange */
+    --accent: #FF693A; /* Using Bright Orange for accents */
+    --background: #F6F4EE; /* Pearl White */
+    --text-dark: #000000; /* Black for dark text */
+    --text-light: #FFFFFF; /* White for light text */
+    --button-hover: #FF5722; /* Darker Orange for hover */
+    --button-active: #E64A19; /* Even Darker Orange for active */
     --feedback-correct: #C8F7C5;
     --feedback-incorrect: #FFD8D2;
     --feedback-border-correct: #2ECC71;
@@ -55,15 +55,20 @@ h1 {
 }
 
 .bubble {
-    align: center;
-    background: var(--accent);
+    background: var(--secondary);
     padding: 1rem 1.5rem;
     border-radius: 15px;
-    display: inline-block;
-    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     font-size: 1.2rem;
-    color: var(--text-dark);
+    color: var(--text-light);
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(255, 105, 58, 0.1); /* Dim Orange with opacity */
+    border: 2px solid var(--secondary);
 }
 
 .menu-grid {
@@ -104,7 +109,7 @@ h1 {
 .lesson-section {
     display: none;
     padding: 2rem;
-    background: var(--background);
+    background: #FFFFFF;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
@@ -299,6 +304,7 @@ footer {
 
     .bubble {
         font-size: 1rem;
+        width: 90%;
     }
 
     .option-btn {
