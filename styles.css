@@ -1,11 +1,11 @@
 :root {
-    --primary: #FF6B6B;
-    --secondary: #4ECDC4;
-    --accent: #FFE66D;
-    --background: #F7FFF7;
-    --text: #2F3061;
-    --button-hover: #FF8B8B;
-    --button-active: #FF5A5A;
+    --primary: #1E90FF; /* Dodger Blue */
+    --secondary: #FFA500; /* Orange */
+    --accent: #FFB347; /* Light Orange */
+    --background: #E0F7FA; /* Light Blue */
+    --text: #2F3061; /* Dark Blue */
+    --button-hover: #1C86EE; /* Slightly darker blue */
+    --button-active: #FFA07A; /* Light Salmon */
     --feedback-correct: #C8F7C5;
     --feedback-incorrect: #FFD8D2;
     --feedback-border-correct: #2ECC71;
@@ -241,6 +241,16 @@ h1 {
 
 .back-btn:hover {
     background: #FFD700;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 @keyframes bounce {
