@@ -15,21 +15,21 @@ const lessons = {
                 </div>
             </div>`,
         exercises: [
-            {q: "Zebras are black ___ white 🦓", o: ["and", "or", "but"], a: "and"},
-            {q: "Do you want pancakes ___ waffles? 🥞", o: ["and", "or", "but"], a: "or"},
-            {q: "I want ice cream, ___ I'm full 🍦", o: ["but", "or", "and"], a: "but"},
-            {q: "Do you prefer a book, table ___ shelf? 📚", o: ["or", "and", "but"], a: "or"},
-            {q: "Baby is hungry ___ tired 👶", o: ["and", "but", "or"], a: "and"},
-            {q: "The TV is broken ___ they want to watch 📺", o: ["but", "and", "or"], a: "but"},
-            {q: "The baseball bat is missing ___ it's not fun ⚾", o: ["but", "or", "and"], a: "but"},
-            {q: "Do you like apples ___ oranges? 🍎🍊", o: ["or", "and", "but"], a: "or"},
-            {q: "It is sunny ___ raining today? 🌞🌧️", o: ["but", "and", "or"], a: "but"},
-            {q: "Would you like pizza ___ pasta for dinner? 🍕🍝", o: ["and", "or", "but"], a: "and"},
-            {q: "Do you want milk ___ juice? 🥛🧃", o: ["or", "but", "and"], a: "or"},
-            {q: "Dogs ___ cats get along well 🐶🐱", o: ["and", "but", "or"], a: "and"},
-            {q: "Would you like tea ___ coffee? ☕🍵", o: ["and", "but", "or"], a: "or"},
-            {q: "He is tall ___ strong 💪", o: ["and", "but", "or"], a: "and"},
-            {q: "She wanted to play, ___ it was raining ☔", o: ["and", "but", "or"], a: "but"}
+            {q: "Zebras are black ___ white 🦓", o: ["and", "or", "but"], a: "and", tip: "AND connects two similar ideas."},
+            {q: "Do you want pancakes ___ waffles? 🥞", o: ["and", "or", "but"], a: "or", tip: "OR presents a choice between options."},
+            {q: "I want ice cream, ___ I'm full 🍦", o: ["but", "or", "and"], a: "but", tip: "BUT shows a contrast between two statements."},
+            {q: "Do you prefer a book, table ___ shelf? 📚", o: ["or", "and", "but"], a: "or", tip: "OR presents a choice between options."},
+            {q: "Baby is hungry ___ tired 👶", o: ["and", "but", "or"], a: "and", tip: "AND connects two similar states."},
+            {q: "The TV is broken ___ they want to watch 📺", o: ["but", "and", "or"], a: "but", tip: "BUT shows a contrast between two statements."},
+            {q: "The baseball bat is missing ___ it's not fun ⚾", o: ["but", "or", "and"], a: "but", tip: "BUT shows a contrast between two statements."},
+            {q: "Do you like apples ___ oranges? 🍎🍊", o: ["or", "and", "but"], a: "or", tip: "OR presents a choice between options."},
+            {q: "It is sunny ___ raining today? 🌞🌧️", o: ["but", "and", "or"], a: "but", tip: "BUT shows a contrast between two statements."},
+            {q: "Would you like pizza ___ pasta for dinner? 🍕🍝", o: ["and", "or", "but"], a: "and", tip: "AND connects two similar options."},
+            {q: "Do you want milk ___ juice? 🥛🧃", o: ["or", "but", "and"], a: "or", tip: "OR presents a choice between options."},
+            {q: "Dogs ___ cats get along well 🐶🐱", o: ["and", "but", "or"], a: "and", tip: "AND connects two similar subjects."},
+            {q: "Would you like tea ___ coffee? ☕🍵", o: ["and", "but", "or"], a: "or", tip: "OR presents a choice between options."},
+            {q: "He is tall ___ strong 💪", o: ["and", "but", "or"], a: "and", tip: "AND connects two similar qualities."},
+            {q: "She wanted to play, ___ it was raining ☔", o: ["and", "but", "or"], a: "but", tip: "BUT shows a contrast between two statements."}
         ]
     },
     questionWords: {
@@ -47,19 +47,19 @@ const lessons = {
                 </div>
             </div>`,
         exercises: [
-            {q: "___ is crying? 😢", o: ["Who", "Why", "Where"], a: "Who"},
-            {q: "___ is your backpack? 🎒", o: ["Where", "What", "When"], a: "Where"},
-            {q: "___ is she doing? 📚", o: ["What", "Who", "Why"], a: "What"},
-            {q: "___ is in the kitchen? 👨🍳", o: ["Who", "Where", "When"], a: "Who"},
-            {q: "___ is your birthday? 🎂", o: ["When", "What", "Why"], a: "When"},
-            {q: "___ is your teacher? 👩🏫", o: ["Who", "Where", "What"], a: "Who"},
-            {q: "___ is the park? 🌳", o: ["Where", "When", "Why"], a: "Where"},
-            {q: "___ is lunch time? 🕛", o: ["When", "What", "Who"], a: "When"},
-            {q: "___ is the sky blue? 🌌", o: ["Why", "Where", "How"], a: "Why"},
-            {q: "___ are you going to school? 🚌", o: ["Where", "Why", "Who"], a: "Where"},
-            {q: "___ is your favorite color? 🎨", o: ["What", "When", "Who"], a: "What"},
-            {q: "___ do you like pizza? 🍕", o: ["Why", "Where", "Who"], a: "Why"},
-            {q: "___ is your birthday celebration? 🎉", o: ["When", "What", "Who"], a: "When"}
+            {q: "___ is crying? 😢", o: ["Who", "Why", "Where"], a: "Who", tip: "WHO asks about a person."},
+            {q: "___ is your backpack? 🎒", o: ["Where", "What", "When"], a: "Where", tip: "WHERE asks about a place."},
+            {q: "___ is she doing? 📚", o: ["What", "Who", "Why"], a: "What", tip: "WHAT asks about an action or thing."},
+            {q: "___ is in the kitchen? 👨🍳", o: ["Who", "Where", "When"], a: "Who", tip: "WHO asks about a person."},
+            {q: "___ is your birthday? 🎂", o: ["When", "What", "Why"], a: "When", tip: "WHEN asks about time."},
+            {q: "___ is your teacher? 👩🏫", o: ["Who", "Where", "What"], a: "Who", tip: "WHO asks about a person."},
+            {q: "___ is the park? 🌳", o: ["Where", "When", "Why"], a: "Where", tip: "WHERE asks about a place."},
+            {q: "___ is lunch time? 🕛", o: ["When", "What", "Who"], a: "When", tip: "WHEN asks about time."},
+            {q: "___ is the sky blue? 🌌", o: ["Why", "Where", "How"], a: "Why", tip: "WHY asks about reasons."},
+            {q: "___ are you going to school? 🚌", o: ["Where", "Why", "Who"], a: "Where", tip: "WHERE asks about a place."},
+            {q: "___ is your favorite color? 🎨", o: ["What", "When", "Who"], a: "What", tip: "WHAT asks about things."},
+            {q: "___ do you like pizza? 🍕", o: ["Why", "Where", "Who"], a: "Why", tip: "WHY asks about reasons."},
+            {q: "___ is your birthday celebration? 🎉", o: ["When", "What", "Who"], a: "When", tip: "WHEN asks about time."}
         ]
     },
     canCant: {
@@ -76,22 +76,22 @@ const lessons = {
                 </div>
             </div>`,
         exercises: [
-            {q: "Seals ___ clap 🦭", o: ["can", "can't"], a: "can"},
-            {q: "Cows ___ speak 🐮", o: ["can't", "can"], a: "can't"},
-            {q: "Parrots ___ talk 🦜", o: ["can", "can't"], a: "can"},
-            {q: "Bees ___ hide 🐝", o: ["can't", "can"], a: "can't"},
-            {q: "Spiders ___ spin webs 🕷️", o: ["can", "can't"], a: "can"},
-            {q: "Whales ___ land on the beach 🐳", o: ["can't", "can"], a: "can't"},
-            {q: "Goats ___ sing songs 🐐", o: ["can't", "can"], a: "can't"},
-            {q: "Dolphins ___ click sounds 🐬", o: ["can", "can't"], a: "can"},
-            {q: "Frogs ___ jump high 🐸", o: ["can", "can't"], a: "can"},
-            {q: "Fish ___ walk on land 🐠", o: ["can't", "can"], a: "can't"},
-            {q: "Bats ___ see in the dark 🦇", o: ["can", "can't"], a: "can"},
-            {q: "Pigs ___ fly in the sky 🐷", o: ["can't", "can"], a: "can't"},
-            {q: "Kangaroos ___ hop long distances 🦘", o: ["can", "can't"], a: "can"},
-            {q: "Snakes ___ have legs 🐍", o: ["can't", "can"], a: "can't"},
-            {q: "Eagles ___ soar high in the sky 🦅", o: ["can", "can't"], a: "can"},
-            {q: "Turtles ___ run fast 🐢", o: ["can't", "can"], a: "can't"}
+            {q: "Seals ___ clap 🦭", o: ["can", "can't"], a: "can", tip: "Seals have flippers that allow them to clap."},
+            {q: "Cows ___ speak 🐮", o: ["can't", "can"], a: "can't", tip: "Cows communicate through sounds but cannot speak."},
+            {q: "Parrots ___ talk 🦜", o: ["can", "can't"], a: "can", tip: "Parrots mimic sounds and can talk."},
+            {q: "Bees ___ hide 🐝", o: ["can't", "can"], a: "can't", tip: "Bees are active and don't hide."},
+            {q: "Spiders ___ spin webs 🕷️", o: ["can", "can't"], a: "can", tip: "Spiders use silk to spin webs."},
+            {q: "Whales ___ land on the beach 🐳", o: ["can't", "can"], a: "can't", tip: "Whales live in water and cannot land on the beach."},
+            {q: "Goats ___ sing songs 🐐", o: ["can't", "can"], a: "can't", tip: "Goats make sounds but do not sing songs."},
+            {q: "Dolphins ___ click sounds 🐬", o: ["can", "can't"], a: "can", tip: "Dolphins use echolocation with click sounds."},
+            {q: "Frogs ___ jump high 🐸", o: ["can", "can't"], a: "can", tip: "Frogs have strong legs that allow them to jump high."},
+            {q: "Fish ___ walk on land 🐠", o: ["can't", "can"], a: "can't", tip: "Fish are aquatic and cannot walk on land."},
+            {q: "Bats ___ see in the dark 🦇", o: ["can", "can't"], a: "can", tip: "Bats use echolocation to navigate in the dark."},
+            {q: "Pigs ___ fly in the sky 🐷", o: ["can't", "can"], a: "can't", tip: "Pigs are terrestrial animals and cannot fly."},
+            {q: "Kangaroos ___ hop long distances 🦘", o: ["can", "can't"], a: "can", tip: "Kangaroos have strong hind legs for hopping."},
+            {q: "Snakes ___ have legs 🐍", o: ["can't", "can"], a: "can't", tip: "Snakes are legless reptiles."},
+            {q: "Eagles ___ soar high in the sky 🦅", o: ["can", "can't"], a: "can", tip: "Eagles are birds that soar high using their wings."},
+            {q: "Turtles ___ run fast 🐢", o: ["can't", "can"], a: "can't", tip: "Turtles move slowly and cannot run fast."}
         ]
     },
     progressive: {
@@ -105,20 +105,20 @@ const lessons = {
                 Example: "She <u>is playing</u> → Is she playing?"</p>
             </div>`,
         exercises: [
-            {q: "He is working → ? 💼", a: "Is he working?", t: "text"},
-            {q: "We are eating → ? 🍽️", a: "Are we eating?", t: "text"},
-            {q: "You are running → ? 🏃‍♀️", a: "Are you running?", t: "text"},
-            {q: "They are learning → ? 📖", a: "Are they learning?", t: "text"},
-            {q: "I am playing → ? 🎮", a: "Am I playing?", t: "text"},
-            {q: "She is helping → ? 🩺", a: "Is she helping?", t: "text"},
-            {q: "Dogs are barking → ? 🐶", a: "Are dogs barking?", t: "text"},
-            {q: "Mom is cooking → ? 👩‍🍳", a: "Is mom cooking?", t: "text"},
-            {q: "Kids are sleeping → ? 😴", a: "Are kids sleeping?", t: "text"},
-            {q: "Bird is singing → ? 🐦", a: "Is bird singing?", t: "text"},
-            {q: "Dad is reading → ? 📖", a: "Is dad reading?", t: "text"},
-            {q: "Sisters are dancing → ? 💃", a: "Are sisters dancing?", t: "text"},
-            {q: "Brother is drawing → ? ✏️", a: "Is brother drawing?", t: "text"},
-            {q: "Grandpa is gardening → ? 🌱", a: "Is grandpa gardening?", t: "text"}
+            {q: "He is working → ? 💼", a: "Is he working?", t: "text", tip: "Use 'Is' for singular subjects like 'He'."},
+            {q: "We are eating → ? 🍽️", a: "Are we eating?", t: "text", tip: "Use 'Are' for plural subjects like 'We'."},
+            {q: "You are running → ? 🏃‍♀️", a: "Are you running?", t: "text", tip: "Use 'Are' for 'You' regardless of number."},
+            {q: "They are learning → ? 📖", a: "Are they learning?", t: "text", tip: "Use 'Are' for plural subjects like 'They'."},
+            {q: "I am playing → ? 🎮", a: "Am I playing?", t: "text", tip: "Use 'Am' for the singular subject 'I'."},
+            {q: "She is helping → ? 🩺", a: "Is she helping?", t: "text", tip: "Use 'Is' for singular subjects like 'She'."},
+            {q: "Dogs are barking → ? 🐶", a: "Are dogs barking?", t: "text", tip: "Use 'Are' for plural subjects like 'Dogs'."},
+            {q: "Mom is cooking → ? 👩‍🍳", a: "Is mom cooking?", t: "text", tip: "Use 'Is' for singular subjects like 'Mom'."},
+            {q: "Kids are sleeping → ? 😴", a: "Are kids sleeping?", t: "text", tip: "Use 'Are' for plural subjects like 'Kids'."},
+            {q: "Bird is singing → ? 🐦", a: "Is bird singing?", t: "text", tip: "Use 'Is' for singular subjects like 'Bird'."},
+            {q: "Dad is reading → ? 📖", a: "Is dad reading?", t: "text", tip: "Use 'Is' for singular subjects like 'Dad'."},
+            {q: "Sisters are dancing → ? 💃", a: "Are sisters dancing?", t: "text", tip: "Use 'Are' for plural subjects like 'Sisters'."},
+            {q: "Brother is drawing → ? ✏️", a: "Is brother drawing?", t: "text", tip: "Use 'Is' for singular subjects like 'Brother'."},
+            {q: "Grandpa is gardening → ? 🌱", a: "Is grandpa gardening?", t: "text", tip: "Use 'Is' for singular subjects like 'Grandpa'."}
         ]
     },
     negativeProgressive: {
@@ -131,20 +131,20 @@ const lessons = {
                 Example: "They <u>are not</u> watching."</p>
             </div>`,
         exercises: [
-            {q: "They are watching TV →", a: "They are not watching TV", t: "text"},
-            {q: "He is looking →", a: "He is not looking", t: "text"},
-            {q: "We are cooking →", a: "We are not cooking", t: "text"},
-            {q: "Helen is dancing →", a: "Helen is not dancing", t: "text"},
-            {q: "I am finding →", a: "I am not finding", t: "text"},
-            {q: "I am doing →", a: "I am not doing", t: "text"},
-            {q: "Cat is sleeping →", a: "Cat is not sleeping", t: "text"},
-            {q: "Teachers are talking →", a: "Teachers are not talking", t: "text"},
-            {q: "Sun is shining →", a: "Sun is not shining", t: "text"},
-            {q: "Baby is crying →", a: "Baby is not crying", t: "text"},
-            {q: "Bird is flying →", a: "Bird is not flying", t: "text"},
-            {q: "Children are playing →", a: "Children are not playing", t: "text"},
-            {q: "Mom is reading →", a: "Mom is not reading", t: "text"},
-            {q: "Dad is working →", a: "Dad is not working", t: "text"}
+            {q: "They are watching TV →", a: "They are not watching TV", t: "text", tip: "Add 'not' after 'are' to make it negative."},
+            {q: "He is looking →", a: "He is not looking", t: "text", tip: "Add 'not' after 'is' to make it negative."},
+            {q: "We are cooking →", a: "We are not cooking", t: "text", tip: "Add 'not' after 'are' to make it negative."},
+            {q: "Helen is dancing →", a: "Helen is not dancing", t: "text", tip: "Add 'not' after 'is' to make it negative."},
+            {q: "I am finding →", a: "I am not finding", t: "text", tip: "Add 'not' after 'am' to make it negative."},
+            {q: "I am doing →", a: "I am not doing", t: "text", tip: "Add 'not' after 'am' to make it negative."},
+            {q: "Cat is sleeping →", a: "Cat is not sleeping", t: "text", tip: "Add 'not' after 'is' to make it negative."},
+            {q: "Teachers are talking →", a: "Teachers are not talking", t: "text", tip: "Add 'not' after 'are' to make it negative."},
+            {q: "Sun is shining →", a: "Sun is not shining", t: "text", tip: "Add 'not' after 'is' to make it negative."},
+            {q: "Baby is crying →", a: "Baby is not crying", t: "text", tip: "Add 'not' after 'is' to make it negative."},
+            {q: "Bird is flying →", a: "Bird is not flying", t: "text", tip: "Add 'not' after 'is' to make it negative."},
+            {q: "Children are playing →", a: "Children are not playing", t: "text", tip: "Add 'not' after 'are' to make it negative."},
+            {q: "Mom is reading →", a: "Mom is not reading", t: "text", tip: "Add 'not' after 'is' to make it negative."},
+            {q: "Dad is working →", a: "Dad is not working", t: "text", tip: "Add 'not' after 'is' to make it negative."}
         ]
     }
 };
@@ -223,11 +223,11 @@ function showLesson(lessonKey) {
             const correctAnswer = currentExercise.a.trim().toLowerCase();
 
             if (selectedAnswer === correctAnswer) {
-                feedback.innerHTML = "✅ Correct! 🎉";
+                feedback.innerHTML = `✅ Correct! 🎉<br><span class="tip">${currentExercise.tip}</span>`;
                 feedback.classList.add('correct');
                 feedback.classList.remove('incorrect');
             } else {
-                feedback.innerHTML = `❌ Incorrect! The correct answer is: "${currentExercise.a}". <button class="try-again-btn">Try Again</button>`;
+                feedback.innerHTML = `❌ Incorrect! The correct answer is: "${currentExercise.a}".<br><span class="tip">${currentExercise.tip}</span> <button class="try-again-btn">Try Again</button>`;
                 feedback.classList.add('incorrect');
                 feedback.classList.remove('correct');
             }
@@ -288,11 +288,11 @@ function showLesson(lessonKey) {
             }
 
             if (userAnswer === correctAnswer) {
-                feedback.innerHTML = "✅ Correct! 🎉";
+                feedback.innerHTML = `✅ Correct! 🎉<br><span class="tip">${currentExercise.tip}</span>`;
                 feedback.classList.add('correct');
                 feedback.classList.remove('incorrect');
             } else {
-                feedback.innerHTML = `❌ Incorrect! The correct answer is: "${currentExercise.a}". <button class="try-again-btn">Try Again</button>`;
+                feedback.innerHTML = `❌ Incorrect! The correct answer is: "${currentExercise.a}".<br><span class="tip">${currentExercise.tip}</span> <button class="try-again-btn">Try Again</button>`;
                 feedback.classList.add('incorrect');
                 feedback.classList.remove('correct');
             }
