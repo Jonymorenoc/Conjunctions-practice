@@ -15,7 +15,6 @@ const lessons = {
                 </div>
             </div>`,
         exercises: [
-            // Existing exercises
             {q: "Zebras are black ___ white 🦓", o: ["and", "or", "but"], a: "and"},
             {q: "Pancakes ___ waffles? 🥞", o: ["and", "or", "but"], a: "or"},
             {q: "I want ice cream, ___ I'm full 🍦", o: ["but", "or", "and"], a: "but"},
@@ -23,12 +22,10 @@ const lessons = {
             {q: "Baby: hungry ___ tired 👶", o: ["and", "but", "or"], a: "and"},
             {q: "TV broken ___ they watch 📺", o: ["but", "and", "or"], a: "but"},
             {q: "Baseball bat missing ___ ⚾", o: ["but", "or", "and"], a: "but"},
-            // New exercises
             {q: "Apples ___ oranges? 🍎🍊", o: ["or", "and", "but"], a: "or"},
             {q: "Sunny ___ raining? 🌞🌧️", o: ["but", "and", "or"], a: "but"},
             {q: "Pizza ___ pasta 🍕🍝", o: ["and", "or", "but"], a: "and"},
             {q: "Want milk ___ juice? 🥛🧃", o: ["or", "but", "and"], a: "or"},
-            // Additional exercises
             {q: "Dogs ___ cats get along 🐶🐱", o: ["and", "but", "or"], a: "and"},
             {q: "Would you like tea ___ coffee? ☕🍵", o: ["and", "but", "or"], a: "or"},
             {q: "He is tall ___ strong 💪", o: ["and", "but", "or"], a: "and"},
@@ -50,18 +47,15 @@ const lessons = {
                 </div>
             </div>`,
         exercises: [
-            // Existing exercises
             {q: "___ is crying? 😢", o: ["Why", "Who", "Where"], a: "Who"},
             {q: "___ is backpack? 🎒", o: ["Where", "What", "When"], a: "Where"},
             {q: "___ is she doing? 📚", o: ["What", "Who", "Why"], a: "What"},
             {q: "___ in kitchen? 👨🍳", o: ["Who", "Where", "When"], a: "Who"},
             {q: "___ birthday? 🎂", o: ["When", "What", "Why"], a: "When"},
-            // New exercises
             {q: "___ is your teacher? 👩🏫", o: ["Who", "Where", "What"], a: "Who"},
             {q: "___ is the park? 🌳", o: ["Where", "When", "Why"], a: "Where"},
             {q: "___ is lunch time? 🕛", o: ["When", "What", "Who"], a: "When"},
             {q: "___ is the sky blue? 🌌", o: ["Why", "Where", "How"], a: "Why"},
-            // Additional exercises
             {q: "___ are you going? 🚌", o: ["Where", "Why", "Who"], a: "Where"},
             {q: "___ is your favorite color? 🎨", o: ["What", "When", "Who"], a: "What"},
             {q: "___ do you like pizza? 🍕", o: ["Why", "Where", "Who"], a: "Why"},
@@ -82,7 +76,6 @@ const lessons = {
                 </div>
             </div>`,
         exercises: [
-            // Existing exercises
             {q: "Seals ___ clap 🦭", o: ["can", "can't"], a: "can"},
             {q: "Cows ___ speak 🐮", o: ["can't", "can"], a: "can't"},
             {q: "Parrots ___ talk 🦜", o: ["can", "can't"], a: "can"},
@@ -91,12 +84,10 @@ const lessons = {
             {q: "Whales ___ land 🐳", o: ["can't", "can"], a: "can't"},
             {q: "Goats ___ sing 🐐", o: ["can't", "can"], a: "can't"},
             {q: "Dolphins ___ click 🐬", o: ["can", "can't"], a: "can"},
-            // New exercises
             {q: "Frogs ___ jump 🐸", o: ["can", "can't"], a: "can"},
             {q: "Fish ___ walk 🐠", o: ["can't", "can"], a: "can't"},
             {q: "Bats ___ see 🦇", o: ["can", "can't"], a: "can"},
             {q: "Pigs ___ fly 🐷", o: ["can't", "can"], a: "can't"},
-            // Additional exercises
             {q: "Kangaroos ___ hop 🦘", o: ["can", "can't"], a: "can"},
             {q: "Snakes ___ have legs 🐍", o: ["can't", "can"], a: "can't"},
             {q: "Eagles ___ soar high 🦅", o: ["can", "can't"], a: "can"},
@@ -114,19 +105,16 @@ const lessons = {
                 Example: "She <u>is playing</u> → Is she playing?"</p>
             </div>`,
         exercises: [
-            // Existing exercises
             {q: "He is working → ? 💼", a: "Is he working?", t: "text"},
             {q: "We are eating → ? 🍽️", a: "Are we eating?", t: "text"},
             {q: "You are running → ? 🏃‍♀️", a: "Are you running?", t: "text"},
             {q: "They are learning → ? 📖", a: "Are they learning?", t: "text"},
             {q: "I am playing → ? 🎮", a: "Am I playing?", t: "text"},
             {q: "She is helping → ? 🩺", a: "Is she helping?", t: "text"},
-            // New exercises
             {q: "Dogs are barking → ? 🐶", a: "Are dogs barking?", t: "text"},
             {q: "Mom is cooking → ? 👩‍🍳", a: "Is mom cooking?", t: "text"},
             {q: "Kids are sleeping → ? 😴", a: "Are kids sleeping?", t: "text"},
             {q: "Bird is singing → ? 🐦", a: "Is bird singing?", t: "text"},
-            // Additional exercises
             {q: "Dad is reading → ? 📖", a: "Is dad reading?", t: "text"},
             {q: "Sisters are dancing → ? 💃", a: "Are sisters dancing?", t: "text"},
             {q: "Brother is drawing → ? ✏️", a: "Is brother drawing?", t: "text"},
@@ -143,19 +131,16 @@ const lessons = {
                 Example: "They <u>are not</u> watching."</p>
             </div>`,
         exercises: [
-            // Existing exercises
             {q: "They are watching TV →", a: "They are not watching TV", t: "text"},
             {q: "He is looking →", a: "He is not looking", t: "text"},
             {q: "We are cooking →", a: "We are not cooking", t: "text"},
             {q: "Helen is dancing →", a: "Helen is not dancing", t: "text"},
             {q: "I am finding →", a: "I am not finding", t: "text"},
             {q: "I am doing →", a: "I am not doing", t: "text"},
-            // New exercises
             {q: "Cat is sleeping →", a: "Cat is not sleeping", t: "text"},
             {q: "Teachers are talking →", a: "Teachers are not talking", t: "text"},
             {q: "Sun is shining →", a: "Sun is not shining", t: "text"},
             {q: "Baby is crying →", a: "Baby is not crying", t: "text"},
-            // Additional exercises
             {q: "Bird is flying →", a: "Bird is not flying", t: "text"},
             {q: "Children are playing →", a: "Children are not playing", t: "text"},
             {q: "Mom is reading →", a: "Mom is not reading", t: "text"},
@@ -202,15 +187,16 @@ function showLesson(lessonKey) {
         ${lesson.explanation}
         <div class="exercises">
             ${lesson.exercises.map((ex, index) => `
-                <div class="exercise-card">
+                <div class="exercise-card" data-exercise-index="${index}">
                     <p>${ex.q}</p>
                     ${ex.o ? `
                     <div class="options-grid">
-                        ${ex.o.map(option => `<button class="option-btn">${option}</button>`).join('')}
+                        ${ex.o.map(option => `<button class="option-btn" data-answer="${option}">${option}</button>`).join('')}
                     </div>
                     ` : `
                     <div class="options-grid">
                         <input type="text" class="text-input" placeholder="Type your answer">
+                        <button class="submit-btn">Submit</button>
                     </div>
                     `}
                     <div class="feedback" style="display:none;"></div>
@@ -227,12 +213,13 @@ function showLesson(lessonKey) {
     });
 
     // Add event listeners to option buttons
-    lessonSection.querySelectorAll('.option-btn').forEach((btn, idx) => {
+    lessonSection.querySelectorAll('.option-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const exerciseCard = btn.closest('.exercise-card');
             const feedback = exerciseCard.querySelector('.feedback');
-            const currentExercise = lesson.exercises[idx];
-            const selectedAnswer = btn.textContent.trim().toLowerCase();
+            const selectedAnswer = btn.getAttribute('data-answer').trim().toLowerCase();
+            const exerciseIndex = parseInt(exerciseCard.getAttribute('data-exercise-index'));
+            const currentExercise = lesson.exercises[exerciseIndex];
             const correctAnswer = currentExercise.a.trim().toLowerCase();
 
             if (selectedAnswer === correctAnswer) {
@@ -245,45 +232,47 @@ function showLesson(lessonKey) {
                 feedback.classList.remove('correct');
             }
             feedback.style.display = 'block';
+
+            // Disable all option buttons for this exercise
+            exerciseCard.querySelectorAll('.option-btn').forEach(button => {
+                button.disabled = true;
+                button.style.cursor = 'default';
+                button.style.opacity = '0.6';
+            });
         });
     });
 
-    // Add event listeners to text inputs
-    lessonSection.querySelectorAll('.text-input').forEach((input, idx) => {
+    // Add event listeners to text inputs and submit buttons
+    lessonSection.querySelectorAll('.exercise-card').forEach(card => {
+        const input = card.querySelector('.text-input');
+        const submitBtn = card.querySelector('.submit-btn');
+        const feedback = card.querySelector('.feedback');
+        const exerciseIndex = parseInt(card.getAttribute('data-exercise-index'));
+        const currentExercise = lesson.exercises[exerciseIndex];
+        const correctAnswer = currentExercise.a.trim().toLowerCase();
+
+        // Handle Enter key press
         input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
-                const exerciseCard = input.closest('.exercise-card');
-                const feedback = exerciseCard.querySelector('.feedback');
-                const currentExercise = lesson.exercises[idx];
-                const userAnswer = input.value.trim().toLowerCase();
-                const correctAnswer = currentExercise.a.trim().toLowerCase();
-
-                if (userAnswer === correctAnswer) {
-                    feedback.textContent = "✅ Correct!";
-                    feedback.classList.add('correct');
-                    feedback.classList.remove('incorrect');
-                } else {
-                    feedback.textContent = `❌ Incorrect! The correct answer is: "${currentExercise.a}"`;
-                    feedback.classList.add('incorrect');
-                    feedback.classList.remove('correct');
-                }
-                feedback.style.display = 'block';
-                input.value = '';
+                e.preventDefault();
+                submitAnswer();
             }
         });
 
-        // Optional: Add a submit button for accessibility
-        const submitBtn = document.createElement('button');
-        submitBtn.textContent = "Submit";
-        submitBtn.classList.add('submit-btn');
-        exerciseCard.appendChild(submitBtn);
-
+        // Handle Submit button click
         submitBtn.addEventListener('click', () => {
-            const exerciseCard = submitBtn.closest('.exercise-card');
-            const feedback = exerciseCard.querySelector('.feedback');
-            const currentExercise = lesson.exercises[idx];
-            const userAnswer = exerciseCard.querySelector('.text-input').value.trim().toLowerCase();
-            const correctAnswer = currentExercise.a.trim().toLowerCase();
+            submitAnswer();
+        });
+
+        function submitAnswer() {
+            const userAnswer = input.value.trim().toLowerCase();
+            if (userAnswer === "") {
+                feedback.textContent = "❗ Please type an answer.";
+                feedback.classList.add('incorrect');
+                feedback.classList.remove('correct');
+                feedback.style.display = 'block';
+                return;
+            }
 
             if (userAnswer === correctAnswer) {
                 feedback.textContent = "✅ Correct!";
@@ -295,8 +284,15 @@ function showLesson(lessonKey) {
                 feedback.classList.remove('correct');
             }
             feedback.style.display = 'block';
-            exerciseCard.querySelector('.text-input').value = '';
-        });
+
+            // Disable input and submit button
+            input.disabled = true;
+            submitBtn.disabled = true;
+            input.style.cursor = 'default';
+            submitBtn.style.cursor = 'default';
+            input.style.opacity = '0.6';
+            submitBtn.style.opacity = '0.6';
+        }
     });
 }
 
