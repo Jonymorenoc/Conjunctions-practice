@@ -1,19 +1,12 @@
 :root {
-  /* Primary Color (Dark Blue) */
-  --primary: #2A4270;
-  /* Secondary Color (Bright Orange) */
-  --secondary: #FF693A;
-  /* Accent (Use if needed) */
-  --accent: #FF693A;
-  /* Background (Pearl White) */
-  --background: #F6F4EE;
-  /* Text Colors */
-  --text-dark: #000000;
-  --text-light: #FFFFFF;
-  /* Hover & Active */
-  --button-hover: #FF5722;
-  --button-active: #E64A19;
-  /* Feedback */
+  --primary: #2A4270; /* Dark Blue */
+  --secondary: #FF693A; /* Bright Orange */
+  --accent: #FF693A; /* Using Bright Orange for accents */
+  --background: #F6F4EE; /* Pearl White */
+  --text-dark: #000000; /* Black for dark text */
+  --text-light: #FFFFFF; /* White for light text */
+  --button-hover: #FF5722; /* Darker Orange for hover */
+  --button-active: #E64A19; /* Even Darker Orange for active */
   --feedback-correct: #C8F7C5;
   --feedback-incorrect: #FFD8D2;
   --feedback-border-correct: #2ECC71;
@@ -27,7 +20,7 @@
 }
 
 body {
-  font-family: "Comic Neue", cursive;
+  font-family: 'Comic Neue', cursive;
   background: var(--background);
   color: var(--text-dark);
   line-height: 1.6;
@@ -64,7 +57,7 @@ h1 {
 
 /* "Choose Your Lesson!" Bubble */
 .bubble {
-  background: rgba(255, 105, 58, 0.1); /* Dim orange background */
+  background: rgba(255, 105, 58, 0.1); /* Dim Orange with opacity */
   border: 2px solid var(--secondary);
   padding: 1rem 1.5rem;
   border-radius: 15px;
@@ -96,8 +89,9 @@ h1 {
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
   color: var(--text-light);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: center;
@@ -115,13 +109,6 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.lesson-subtitle {
-  font-size: 0.9rem;
-  margin-top: 0.4rem;
-  opacity: 0.9;
-}
-
-/* Lesson Section */
 .lesson-section {
   display: none;
   padding: 2rem;
@@ -130,15 +117,15 @@ h1 {
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-/* Exercise Card */
 .exercise-card {
   margin: 1.5rem 0;
   padding: 1.5rem;
   border-radius: 10px;
   background: #FFFFFF;
   position: relative;
+  /* Subtle border + shadow for clarity */
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  border: 2px solid #2A4270; /* Dark Blue stroke */
+  border: 1px solid #e0e0e0;
   transition: transform 0.2s;
 }
 
@@ -154,7 +141,7 @@ h1 {
   font-size: 1.2rem;
 }
 
-/* Options Grid (multiple-choice or text input) */
+/* For multiple-choice or text input (fallback) */
 .options-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -162,8 +149,7 @@ h1 {
   margin: 1rem 0;
 }
 
-/* Multiple-choice or puzzle word buttons */
-.option-btn, .word-btn {
+.option-btn {
   padding: 0.8rem;
   border: 2px solid var(--secondary);
   border-radius: 8px;
@@ -173,11 +159,9 @@ h1 {
   font-size: 1rem;
   text-align: center;
   color: var(--text-dark);
-  margin: 5px 0;
 }
 
-.option-btn:hover:not(:disabled),
-.word-btn:hover {
+.option-btn:hover:not(:disabled) {
   background: var(--secondary);
   color: var(--text-light);
 }
@@ -196,8 +180,7 @@ h1 {
   color: var(--text-dark);
 }
 
-.submit-btn,
-.submit-puzzle-btn {
+.submit-btn {
   margin-top: 0.5rem;
   padding: 0.6rem 1rem;
   border: none;
@@ -209,14 +192,12 @@ h1 {
   font-size: 1rem;
 }
 
-.submit-btn:hover:not(:disabled),
-.submit-puzzle-btn:hover {
+.submit-btn:hover:not(:disabled) {
   background: var(--button-hover);
   transform: translateY(-2px);
 }
 
-.submit-btn:active,
-.submit-puzzle-btn:active {
+.submit-btn:active {
   background: var(--button-active);
   transform: translateY(0);
 }
@@ -226,7 +207,7 @@ h1 {
   opacity: 0.6;
 }
 
-/* Feedback */
+/* Feedback Section */
 .feedback {
   margin-top: 1rem;
   padding: 1rem;
@@ -311,66 +292,44 @@ footer {
   to { transform: scale(1); opacity: 1; }
 }
 
-/* Puzzle Layout (Chosen & Available Words) */
+/* Puzzle Layout (for present & negative progressive) */
+.word-puzzle {
+  margin-top: 1rem;
+}
 .word-puzzle .chosen-words {
-  min-height: 40px;
+  min-height: 50px;
   border: 1px dashed #aaa;
   padding: 10px;
   margin-bottom: 1rem;
   border-radius: 5px;
-  min-height: 50px;
 }
 .word-puzzle .available-words {
   margin-bottom: 1rem;
 }
 
-/* Floating Formula Panel */
-.formula-panel {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  border-top: 3px solid var(--secondary);
-  padding: 1rem;
-  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-  z-index: 9999;
+/* Word puzzle buttons - extra space for clarity */
+.word-btn {
+  margin: 0.5rem; /* More separation between puzzle words */
+  padding: 0.7rem;
 }
 
-/* The actual formula text */
-.formula-content h3 {
-  margin-bottom: 0.5rem;
-}
-.formula-content p {
-  margin: 0.3rem 0;
-}
-
-/* Button that toggles the panel */
-.toggle-formula-btn {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
+.submit-puzzle-btn {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
   background: var(--secondary);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.2rem;
+  color: var(--text-light);
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  z-index: 9999;
-  transition: background 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
 }
-
-/* Hide by default */
-.hidden {
-  display: none;
-}
-
-.toggle-formula-btn:hover {
+.submit-puzzle-btn:hover {
   background: var(--button-hover);
+  transform: translateY(-2px);
+}
+.submit-puzzle-btn:active {
+  background: var(--button-active);
+  transform: translateY(0);
 }
 
 /* Responsive adjustments */
@@ -399,6 +358,7 @@ footer {
   .option-btn, .word-btn {
     font-size: 0.9rem;
     padding: 0.6rem;
+    margin: 0.3rem; /* slightly reduced for mobile */
   }
   .text-input {
     font-size: 0.9rem;
