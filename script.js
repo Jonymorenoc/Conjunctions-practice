@@ -1,9 +1,8 @@
 /*************************************************************
  * 1. LESSON DATA
- *    - Keep your original for Conjunctions, Q Words, Can/Can't
- *    - Convert Present & Negative Progressive to puzzle style
  *************************************************************/
 const lessons = {
+  // 1) Conjunctions (15)
   conjunctions: {
     title: "🔗 Conjunctions Practice",
     emoji: "🧩",
@@ -17,21 +16,23 @@ const lessons = {
     exercises: [
       {q: "Zebras are black ___ white 🦓", o: ["and", "or", "but"], a: "and", tip: "AND connects two similar ideas."},
       {q: "Do you want pancakes ___ waffles? 🥞", o: ["and", "or", "but"], a: "or", tip: "OR presents a choice between options."},
-      {q: "I want ice cream, ___ I'm full 🍦", o: ["but", "or", "and"], a: "but", tip: "BUT shows a contrast between two statements."},
-      {q: "Do you prefer a book, table ___ shelf? 📚", o: ["or", "and", "but"], a: "or", tip: "OR presents a choice between options."},
-      {q: "Baby is hungry ___ tired 👶", o: ["and", "but", "or"], a: "and", tip: "AND connects two similar states."},
-      {q: "The TV is broken ___ they want to watch 📺", o: ["but", "and", "or"], a: "but", tip: "BUT shows a contrast between two statements."},
-      {q: "The baseball bat is missing ___ it's not fun ⚾", o: ["but", "or", "and"], a: "but", tip: "BUT shows a contrast between two statements."},
-      {q: "Do you like apples ___ oranges? 🍎🍊", o: ["or", "and", "but"], a: "or", tip: "OR presents a choice between options."},
-      {q: "It is sunny ___ raining today? 🌞🌧️", o: ["but", "and", "or"], a: "but", tip: "BUT shows a contrast between two statements."},
-      {q: "Would you like pizza ___ pasta for dinner? 🍕🍝", o: ["and", "or", "but"], a: "and", tip: "AND connects two similar options."},
-      {q: "Do you want milk ___ juice? 🥛🧃", o: ["or", "but", "and"], a: "or", tip: "OR presents a choice between options."},
-      {q: "Dogs ___ cats get along well 🐶🐱", o: ["and", "but", "or"], a: "and", tip: "AND connects two similar subjects."},
-      {q: "Would you like tea ___ coffee? ☕🍵", o: ["and", "but", "or"], a: "or", tip: "OR presents a choice between options."},
-      {q: "He is tall ___ strong 💪", o: ["and", "but", "or"], a: "and", tip: "AND connects two similar qualities."},
-      {q: "She wanted to play, ___ it was raining ☔", o: ["and", "but", "or"], a: "but", tip: "BUT shows a contrast between two statements."}
+      {q: "I want ice cream, ___ I'm full 🍦", o: ["but", "or", "and"], a: "but", tip: "BUT shows a contrast."},
+      {q: "Do you prefer a book, table ___ shelf? 📚", o: ["or", "and", "but"], a: "or", tip: "OR presents a choice."},
+      {q: "Baby is hungry ___ tired 👶", o: ["and", "but", "or"], a: "and", tip: "AND connects two states."},
+      {q: "The TV is broken ___ they want to watch 📺", o: ["but", "and", "or"], a: "but", tip: "BUT shows a contrast."},
+      {q: "The baseball bat is missing ___ it's not fun ⚾", o: ["but", "or", "and"], a: "but"},
+      {q: "Do you like apples ___ oranges? 🍎🍊", o: ["or", "and", "but"], a: "or"},
+      {q: "It is sunny ___ raining? 🌞🌧️", o: ["but", "and", "or"], a: "but"},
+      {q: "Would you like pizza ___ pasta? 🍕🍝", o: ["and", "or", "but"], a: "and"},
+      {q: "Do you want milk ___ juice? 🥛🧃", o: ["or", "but", "and"], a: "or"},
+      {q: "Dogs ___ cats get along well 🐶🐱", o: ["and", "but", "or"], a: "and"},
+      {q: "Tea ___ coffee? ☕🍵", o: ["and", "but", "or"], a: "or"},
+      {q: "He is tall ___ strong 💪", o: ["and", "but", "or"], a: "and"},
+      {q: "She wanted to play, ___ it was raining ☔", o: ["and", "but", "or"], a: "but"}
     ]
   },
+
+  // 2) Question Words (15)
   questionWords: {
     title: "❓ Question Words",
     emoji: "🔍",
@@ -41,20 +42,24 @@ const lessons = {
       </div>`,
     exercises: [
       {q: "___ is crying? 😢", o: ["Who", "Why", "Where"], a: "Who", tip: "WHO asks about a person."},
-      {q: "___ is your backpack? 🎒", o: ["Where", "What", "When"], a: "Where", tip: "WHERE asks about a place."},
-      {q: "___ is she doing? 📚", o: ["What", "Who", "Why"], a: "What", tip: "WHAT asks about an action or thing."},
-      {q: "___ is in the kitchen? 👨🍳", o: ["Who", "Where", "When"], a: "Who", tip: "WHO asks about a person."},
-      {q: "___ is your birthday? 🎂", o: ["When", "What", "Why"], a: "When", tip: "WHEN asks about time."},
-      {q: "___ is your teacher? 👩🏫", o: ["Who", "Where", "What"], a: "Who", tip: "WHO asks about a person."},
-      {q: "___ is the park? 🌳", o: ["Where", "When", "Why"], a: "Where", tip: "WHERE asks about a place."},
-      {q: "___ is lunch time? 🕛", o: ["When", "What", "Who"], a: "When", tip: "WHEN asks about time."},
-      {q: "___ is the sky blue? 🌌", o: ["Why", "Where", "How"], a: "Why", tip: "WHY asks about reasons."},
-      {q: "___ are you going to school? 🚌", o: ["Where", "Why", "Who"], a: "Where", tip: "WHERE asks about a place."},
-      {q: "___ is your favorite color? 🎨", o: ["What", "When", "Who"], a: "What", tip: "WHAT asks about things."},
-      {q: "___ do you like pizza? 🍕", o: ["Why", "Where", "Who"], a: "Why", tip: "WHY asks about reasons."},
-      {q: "___ is your birthday celebration? 🎉", o: ["When", "What", "Who"], a: "When", tip: "WHEN asks about time."}
+      {q: "___ is your backpack? 🎒", o: ["Where", "What", "When"], a: "Where"},
+      {q: "___ is she doing? 📚", o: ["What", "Who", "Why"], a: "What"},
+      {q: "___ is in the kitchen? 👨🍳", o: ["Who", "Where", "When"], a: "Who"},
+      {q: "___ is your birthday? 🎂", o: ["When", "What", "Why"], a: "When"},
+      {q: "___ is your teacher? 👩🏫", o: ["Who", "Where", "What"], a: "Who"},
+      {q: "___ is the park? 🌳", o: ["Where", "When", "Why"], a: "Where"},
+      {q: "___ is lunch time? 🕛", o: ["When", "What", "Who"], a: "When"},
+      {q: "___ is the sky blue? 🌌", o: ["Why", "Where", "How"], a: "Why"},
+      {q: "___ are you going to school? 🚌", o: ["Where", "Why", "Who"], a: "Where"},
+      {q: "___ is your favorite color? 🎨", o: ["What", "When", "Who"], a: "What"},
+      {q: "___ do you like pizza? 🍕", o: ["Why", "Where", "Who"], a: "Why"},
+      {q: "___ is your birthday celebration? 🎉", o: ["When", "What", "Who"], a: "When"},
+      {q: "___ are we playing today? 🎮", o: ["What", "When", "Why"], a: "What"},
+      {q: "___ is the library? 📚", o: ["Where", "When", "Who"], a: "Where"}
     ]
   },
+
+  // 3) Can/Can't (15)
   canCant: {
     title: "🐾 Can/Can't",
     emoji: "🦁",
@@ -63,63 +68,120 @@ const lessons = {
         <h3>Animal Abilities 🦸‍♂️</h3>
       </div>`,
     exercises: [
-      {q: "Seals ___ clap 🦭", o: ["can", "can't"], a: "can", tip: "Seals have flippers that allow them to clap."},
-      {q: "Cows ___ speak 🐮", o: ["can't", "can"], a: "can't", tip: "Cows communicate through sounds but cannot speak."},
-      {q: "Parrots ___ talk 🦜", o: ["can", "can't"], a: "can", tip: "Parrots mimic sounds and can talk."},
-      {q: "Bees ___ hide 🐝", o: ["can't", "can"], a: "can't", tip: "Bees are active and don't hide."},
-      {q: "Spiders ___ spin webs 🕷️", o: ["can", "can't"], a: "can", tip: "Spiders use silk to spin webs."},
-      {q: "Whales ___ land on the beach 🐳", o: ["can't", "can"], a: "can't", tip: "Whales live in water and cannot land on the beach."},
-      {q: "Goats ___ sing songs 🐐", o: ["can't", "can"], a: "can't", tip: "Goats make sounds but do not sing songs."},
-      {q: "Dolphins ___ click sounds 🐬", o: ["can", "can't"], a: "can", tip: "Dolphins use echolocation with click sounds."},
-      {q: "Frogs ___ jump high 🐸", o: ["can", "can't"], a: "can", tip: "Frogs have strong legs that allow them to jump high."},
-      {q: "Fish ___ walk on land 🐠", o: ["can't", "can"], a: "can't", tip: "Fish are aquatic and cannot walk on land."},
-      {q: "Bats ___ see in the dark 🦇", o: ["can", "can't"], a: "can", tip: "Bats use echolocation to navigate in the dark."},
-      {q: "Pigs ___ fly in the sky 🐷", o: ["can't", "can"], a: "can't", tip: "Pigs are terrestrial animals and cannot fly."},
-      {q: "Kangaroos ___ hop long distances 🦘", o: ["can", "can't"], a: "can", tip: "Kangaroos have strong hind legs for hopping."},
-      {q: "Snakes ___ have legs 🐍", o: ["can't", "can"], a: "can't", tip: "Snakes are legless reptiles."},
-      {q: "Eagles ___ soar high in the sky 🦅", o: ["can", "can't"], a: "can", tip: "Eagles are birds that soar high using their wings."},
-      {q: "Turtles ___ run fast 🐢", o: ["can't", "can"], a: "can't", tip: "Turtles move slowly and cannot run fast."}
+      {q: "Seals ___ clap 🦭", o: ["can", "can't"], a: "can", tip: "Seals have flippers to clap."},
+      {q: "Cows ___ speak 🐮", o: ["can't", "can"], a: "can't"},
+      {q: "Parrots ___ talk 🦜", o: ["can", "can't"], a: "can"},
+      {q: "Bees ___ hide 🐝", o: ["can't", "can"], a: "can't"},
+      {q: "Spiders ___ spin webs 🕷️", o: ["can", "can't"], a: "can"},
+      {q: "Whales ___ land on the beach 🐳", o: ["can't", "can"], a: "can't"},
+      {q: "Goats ___ sing songs 🐐", o: ["can't", "can"], a: "can't"},
+      {q: "Dolphins ___ click sounds 🐬", o: ["can", "can't"], a: "can"},
+      {q: "Frogs ___ jump high 🐸", o: ["can", "can't"], a: "can"},
+      {q: "Fish ___ walk on land 🐠", o: ["can't", "can"], a: "can't"},
+      {q: "Bats ___ see in the dark 🦇", o: ["can", "can't"], a: "can"},
+      {q: "Pigs ___ fly in the sky 🐷", o: ["can't", "can"], a: "can't"},
+      {q: "Kangaroos ___ hop far 🦘", o: ["can", "can't"], a: "can"},
+      {q: "Snakes ___ have legs 🐍", o: ["can't", "can"], a: "can't"},
+      {q: "Eagles ___ soar high 🦅", o: ["can", "can't"], a: "can"}
     ]
   },
 
-  // Present Progressive => puzzle approach
+  // 4) Present Progressive => puzzle approach (15 items)
   progressive: {
     title: "🔄 Present Progressive",
     emoji: "⏳",
     explanation: 
       `<div class="explanation">
-        <h3>Right Now Actions 🏃‍♂️</h3>
-        <p>Form questions with:
-        <strong>Am/Is/Are</strong> + verb+ing + ?<br>
+        <h3>Right Now Actions</h3>
+        <p>Form questions with: <strong>Am/Is/Are</strong> + verb+ing + ?<br>
         Example: "She <u>is playing</u> → Is she playing?"</p>
       </div>`,
     exercises: [
       {
         q: "He is working → ? 💼",
         words: ["Is", "he", "working", "?"],
-        distractors: ["are", "mom", "table", "jump"],
+        distractors: ["are", "mom", "table"],
       },
       {
         q: "We are eating → ? 🍽️",
         words: ["Are", "we", "eating", "?"],
-        distractors: ["is", "cat", "play", "sing"],
+        distractors: ["is", "cat", "play", "sleep"],
       },
       {
         q: "You are running → ? 🏃‍♀️",
         words: ["Are", "you", "running", "?"],
-        distractors: ["car", "why", "milk", "I"],
+        distractors: ["car", "milk", "dog", "am"],
       },
-      // replicate up to all 14 items if you wish
+      {
+        q: "They are learning → ? 📖",
+        words: ["Are", "they", "learning", "?"],
+        distractors: ["run", "hello", "table", "is"],
+      },
+      {
+        q: "I am playing → ? 🎮",
+        words: ["Am", "I", "playing", "?"],
+        distractors: ["cat", "why", "are", "jump"],
+      },
+      {
+        q: "She is helping → ? 🩺",
+        words: ["Is", "she", "helping", "?"],
+        distractors: ["mom", "car", "dogs", "am"],
+      },
+      {
+        q: "Dogs are barking → ? 🐶",
+        words: ["Are", "dogs", "barking", "?"],
+        distractors: ["cat", "I", "milk", "am"],
+      },
+      {
+        q: "Mom is cooking → ? 👩‍🍳",
+        words: ["Is", "mom", "cooking", "?"],
+        distractors: ["are", "jump", "dad", "table"],
+      },
+      {
+        q: "Kids are sleeping → ? 😴",
+        words: ["Are", "kids", "sleeping", "?"],
+        distractors: ["is", "toy", "banana", "mom"],
+      },
+      {
+        q: "Bird is singing → ? 🐦",
+        words: ["Is", "bird", "singing", "?"],
+        distractors: ["milk", "car", "table", "why"],
+      },
+      {
+        q: "Dad is reading → ? 📖",
+        words: ["Is", "dad", "reading", "?"],
+        distractors: ["running", "are", "jump", "milk"],
+      },
+      {
+        q: "Sisters are dancing → ? 💃",
+        words: ["Are", "sisters", "dancing", "?"],
+        distractors: ["is", "he", "toy", "mom"],
+      },
+      {
+        q: "Brother is drawing → ? ✏️",
+        words: ["Is", "brother", "drawing", "?"],
+        distractors: ["dad", "milk", "cat", "are"],
+      },
+      {
+        q: "Grandpa is gardening → ? 🌱",
+        words: ["Is", "grandpa", "gardening", "?"],
+        distractors: ["table", "why", "toys", "are"],
+      },
+      {
+        q: "They are watching → ? 📺",
+        words: ["Are", "they", "watching", "?"],
+        distractors: ["sing", "milk", "am", "mom"],
+      }
     ]
   },
 
-  // Negative Progressive => puzzle approach
+  // 5) Negative Progressive => puzzle approach (15 items)
   negativeProgressive: {
     title: "🚫 Negative Progressive",
     emoji: "🙅‍♂️",
     explanation: 
       `<div class="explanation">
-        <h3>Saying "Not Now" 🙅‍♀️</h3>
+        <h3>Saying "Not Now"</h3>
         <p>Add <strong>not</strong> before verb+ing<br>
         Example: "They <u>are not</u> watching."</p>
       </div>`,
@@ -139,13 +201,72 @@ const lessons = {
         words: ["We", "are", "not", "cooking"],
         distractors: ["milk", "juice", "jump", "am"],
       },
-      // replicate up to all 14 if you wish
+      {
+        q: "Helen is dancing →",
+        words: ["Helen", "is", "not", "dancing"],
+        distractors: ["are", "cat", "toy", "table"],
+      },
+      {
+        q: "I am finding →",
+        words: ["I", "am", "not", "finding"],
+        distractors: ["milk", "mom", "are", "sing"],
+      },
+      {
+        q: "I am doing →",
+        words: ["I", "am", "not", "doing"],
+        distractors: ["run", "why", "toys", "is"],
+      },
+      {
+        q: "Cat is sleeping →",
+        words: ["Cat", "is", "not", "sleeping"],
+        distractors: ["are", "banana", "milk", "mom"],
+      },
+      {
+        q: "Teachers are talking →",
+        words: ["Teachers", "are", "not", "talking"],
+        distractors: ["hello", "table", "milk", "is"],
+      },
+      {
+        q: "Sun is shining →",
+        words: ["Sun", "is", "not", "shining"],
+        distractors: ["are", "dance", "toy", "am"],
+      },
+      {
+        q: "Baby is crying →",
+        words: ["Baby", "is", "not", "crying"],
+        distractors: ["milk", "jump", "play", "are"],
+      },
+      {
+        q: "Bird is flying →",
+        words: ["Bird", "is", "not", "flying"],
+        distractors: ["dad", "are", "toy", "banana"],
+      },
+      {
+        q: "Children are playing →",
+        words: ["Children", "are", "not", "playing"],
+        distractors: ["cat", "milk", "is", "jump"],
+      },
+      {
+        q: "Mom is reading →",
+        words: ["Mom", "is", "not", "reading"],
+        distractors: ["house", "car", "banana", "are"],
+      },
+      {
+        q: "Dad is working →",
+        words: ["Dad", "is", "not", "working"],
+        distractors: ["milk", "jump", "toy", "are"],
+      },
+      {
+        q: "Frogs are swimming →",
+        words: ["Frogs", "are", "not", "swimming"],
+        distractors: ["banana", "am", "sing", "is"],
+      }
     ]
   }
 };
 
 /*************************************************************
- * 2. Shuffle helper for multiple-choice and puzzle arrays
+ * 2. Shuffle helper for multiple-choice & puzzle arrays
  *************************************************************/
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -156,7 +277,7 @@ function shuffleArray(array) {
 }
 
 /*************************************************************
- * 3. Initialize the Menu
+ * 3. Initialize Menu
  *************************************************************/
 document.addEventListener("DOMContentLoaded", initMenu);
 
@@ -168,7 +289,7 @@ function initMenu() {
     const lesson = lessons[key];
     const button = document.createElement("button");
     button.classList.add("menu-btn");
-    // If you want to add subtitles to each lesson
+    // Show lesson's emoji & short title
     button.innerHTML = `
       <div style="text-align:center;">
         <div style="font-weight:bold;">${lesson.emoji} ${lesson.title}</div>
@@ -211,7 +332,7 @@ function showLesson(lessonKey) {
             return buildPuzzleExercise(ex, idx);
           }
 
-          // Otherwise, fallback to multiple-choice / text
+          // Otherwise multiple-choice or text
           if (ex.o) {
             // multiple-choice => randomize
             shuffleArray(ex.o);
@@ -239,7 +360,6 @@ function showLesson(lessonKey) {
               </div>
             `;
           } else {
-            // fallback
             return `
               <div class="exercise-card" data-exercise-index="${idx}">
                 <p>${ex.q}</p>
@@ -257,7 +377,20 @@ function showLesson(lessonKey) {
     lessonSection.classList.remove("active");
     lessonSection.style.display = "none";
     welcomeSection.classList.add("active");
+    hidePista();
   });
+
+  // If progressive => show Pista with Positive formula
+  if (lessonKey === "progressive") {
+    showPista("positive");
+  } 
+  // If negativeProgressive => show Pista with Negative formula
+  else if (lessonKey === "negativeProgressive") {
+    showPista("negative");
+  } 
+  else {
+    hidePista();
+  }
 
   attachExerciseListeners(lessonKey);
 }
@@ -265,19 +398,19 @@ function showLesson(lessonKey) {
 /*************************************************************
  * 5. Build Puzzle for Present/Negative Progressive
  *************************************************************/
-function buildPuzzleExercise(ex, index) {
-  // Merge correct words + distractors, shuffle them
+function buildPuzzleExercise(ex, idx) {
+  // Merge correct words + distractors
   const allWords = [...ex.words, ...(ex.distractors || [])];
   shuffleArray(allWords);
 
   return `
-    <div class="exercise-card" data-exercise-index="${index}">
+    <div class="exercise-card" data-exercise-index="${idx}">
       <p>${ex.q}</p>
       <div class="word-puzzle">
         <div class="chosen-words"></div>
         <div class="available-words">
           ${allWords
-            .map((w) => `<button class="word-btn" data-word="${w}">${w}</button>`)
+            .map(w => `<button class="word-btn" data-word="${w}">${w}</button>`)
             .join("")}
         </div>
         <button class="submit-puzzle-btn">Submit</button>
@@ -299,7 +432,7 @@ function attachExerciseListeners(lessonKey) {
     attachPuzzleListeners(lesson);
   }
 
-  // Multiple-choice:
+  // Multiple-choice
   lessonSection.querySelectorAll(".option-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const exerciseCard = btn.closest(".exercise-card");
@@ -325,7 +458,7 @@ function attachExerciseListeners(lessonKey) {
           <button class="try-again-btn">Try Again</button>`;
         feedback.classList.add("incorrect");
         feedback.classList.remove("correct");
-        // Try Again
+        // try again
         feedback.querySelector(".try-again-btn").addEventListener("click", () => {
           feedback.style.display = "none";
           exerciseCard.querySelectorAll(".option-btn").forEach((b) => {
@@ -337,7 +470,7 @@ function attachExerciseListeners(lessonKey) {
     });
   });
 
-  // Text input:
+  // Text input
   lessonSection.querySelectorAll(".submit-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const exerciseCard = btn.closest(".exercise-card");
@@ -391,24 +524,23 @@ function attachExerciseListeners(lessonKey) {
  * 7. Puzzle Listeners for Present/Negative Progressive
  *************************************************************/
 function attachPuzzleListeners(lesson) {
-  const puzzleDivs = document.querySelectorAll(".word-puzzle");
-  puzzleDivs.forEach((puzzleDiv, idx) => {
+  document.querySelectorAll(".word-puzzle").forEach((puzzleDiv, idx) => {
     const chosenDiv = puzzleDiv.querySelector(".chosen-words");
     const availableDiv = puzzleDiv.querySelector(".available-words");
     const submitBtn = puzzleDiv.querySelector(".submit-puzzle-btn");
     const feedback = puzzleDiv.querySelector(".feedback");
 
-    const correctWords = lesson.exercises[idx].words; // array of correct sequence
+    const correctWords = lesson.exercises[idx].words; // correct array
 
-    // Click on available => move word to chosen
+    // Click on available => move to chosen
     availableDiv.addEventListener("click", (e) => {
       if (e.target.classList.contains("word-btn")) {
         const word = e.target.dataset.word;
-        // create a chosen word
+        // create chosen
         const chosenSpan = document.createElement("span");
         chosenSpan.classList.add("chosen-word");
         chosenSpan.style.margin = "0.5rem";
-        chosenSpan.style.padding = "0.6rem 0.8rem";
+        chosenSpan.style.padding = "0.7rem 1rem";
         chosenSpan.style.background = "#eee";
         chosenSpan.style.borderRadius = "5px";
         chosenSpan.style.cursor = "pointer";
@@ -416,16 +548,16 @@ function attachPuzzleListeners(lesson) {
         chosenSpan.textContent = word;
         chosenDiv.appendChild(chosenSpan);
 
-        // hide the clicked word in available
+        // hide original
         e.target.style.display = "none";
       }
     });
 
-    // Click on chosen => remove => re-show in available
+    // Click chosen => remove => re-show
     chosenDiv.addEventListener("click", (e) => {
       if (e.target.classList.contains("chosen-word")) {
         const word = e.target.dataset.word;
-        // find that word-btn in available
+        // re-show in available
         const matchBtn = availableDiv.querySelector(`.word-btn[data-word="${word}"]`);
         if (matchBtn) matchBtn.style.display = "inline-block";
         e.target.remove();
@@ -439,7 +571,7 @@ function attachPuzzleListeners(lesson) {
       const userSequence = Array.from(chosen).map(span => span.dataset.word);
 
       if (arraysEqual(userSequence, correctWords)) {
-        feedback.innerHTML = "✅ Correct! Great job!";
+        feedback.innerHTML = `✅ Correct! Great job!`;
         feedback.classList.add("correct");
         feedback.classList.remove("incorrect");
         submitBtn.disabled = true;
@@ -455,7 +587,7 @@ function attachPuzzleListeners(lesson) {
           feedback.style.display = "none";
           feedback.innerHTML = "";
           chosenDiv.innerHTML = "";
-          // re-show all hidden word-btn
+          // re-show
           availableDiv.querySelectorAll(".word-btn").forEach(btn => {
             btn.style.display = "inline-block";
           });
@@ -465,11 +597,51 @@ function attachPuzzleListeners(lesson) {
   });
 }
 
-// Compare arrays
 function arraysEqual(a, b) {
   if (a.length !== b.length) return false;
   for (let i = 0; i < a.length; i++) {
     if (a[i] !== b[i]) return false;
   }
   return true;
+}
+
+/*************************************************************
+ * 8. "Pista" Panel for Progressive
+ *    - If lessonKey is "progressive" => Positive formula
+ *    - If lessonKey is "negativeProgressive" => Negative formula
+ *************************************************************/
+const pistaPanel = document.getElementById("pista-panel");
+const pistaContent = document.querySelector(".pista-content");
+const pistaToggleBtn = document.getElementById("pista-toggle-btn");
+
+function showPista(type) {
+  pistaToggleBtn.classList.remove("hidden");
+  pistaPanel.classList.add("hidden"); // keep hidden until user toggles
+
+  // Fill the panel
+  if (type === "positive") {
+    pistaContent.innerHTML = `
+      <h3>Present Progressive (Positive)</h3>
+      <p>Subject + to be (am/is/are) + verb(ing)</p>
+      <p>For example: "He is working → Is he working?"</p>
+    `;
+  } else {
+    pistaContent.innerHTML = `
+      <h3>Present Progressive (Negative)</h3>
+      <p>Subject + to be (am/is/are) + <strong>not</strong> + verb(ing)</p>
+      <p>For example: "They are not watching."</p>
+    `;
+  }
+
+  pistaToggleBtn.addEventListener("click", togglePista);
+}
+
+function hidePista() {
+  pistaToggleBtn.classList.add("hidden");
+  pistaPanel.classList.add("hidden");
+  pistaToggleBtn.removeEventListener("click", togglePista);
+}
+
+function togglePista() {
+  pistaPanel.classList.toggle("hidden");
 }
