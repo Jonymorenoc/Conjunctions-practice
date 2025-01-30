@@ -1,338 +1,373 @@
 :root {
-    --primary: #2A4270; /* Dark Blue */
-    --secondary: #FF693A; /* Bright Orange */
-    --accent: #FF693A; /* Using Bright Orange for accents */
-    --background: #F6F4EE; /* Pearl White */
-    --text-dark: #000000; /* Black for dark text */
-    --text-light: #FFFFFF; /* White for light text */
-    --button-hover: #FF5722; /* Darker Orange for hover */
-    --button-active: #E64A19; /* Even Darker Orange for active */
-    --feedback-correct: #C8F7C5;
-    --feedback-incorrect: #FFD8D2;
-    --feedback-border-correct: #2ECC71;
-    --feedback-border-incorrect: #E74C3C;
+  /* Primary Color (Dark Blue) */
+  --primary: #2A4270;
+  /* Secondary Color (Bright Orange) */
+  --secondary: #FF693A;
+  /* Accent (Use bright orange if desired) */
+  --accent: #FF693A;
+  /* Background (Pearl White) */
+  --background: #F6F4EE;
+  /* Dark & Light Text */
+  --text-dark: #000000;
+  --text-light: #FFFFFF;
+  /* Button Hover & Active (Darker Oranges) */
+  --button-hover: #FF5722;
+  --button-active: #E64A19;
+  /* Feedback Colors */
+  --feedback-correct: #C8F7C5;
+  --feedback-incorrect: #FFD8D2;
+  --feedback-border-correct: #2ECC71;
+  --feedback-border-incorrect: #E74C3C;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Comic Neue', cursive;
-    background: var(--background);
-    color: var(--text-dark);
-    line-height: 1.6;
+  font-family: "Comic Neue", cursive;
+  background: var(--background);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
 }
 
+/* Header */
 header {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: var(--primary);
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--primary);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: var(--text-light);
-    font-size: 2.5rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: var(--text-light);
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .emoji-header {
-    font-size: 2.5rem;
-    margin: 1rem 0;
-    animation: bounce 2s infinite;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  animation: bounce 2s infinite;
 }
 
+/* "Choose Your Lesson!" Bubble */
 .bubble {
-    background: rgba(255, 105, 58, 0.1); /* Dim Orange with opacity */
-    border: 2px solid var(--secondary);
-    padding: 1rem 1.5rem;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    font-size: 1.2rem;
-    color: var(--text-dark); /* Changed from var(--text-light) to var(--text-dark) */
-    width: 80%;
-    max-width: 600px;
+  background: rgba(255, 105, 58, 0.1); /* Dim orange background */
+  border: 2px solid var(--secondary);
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  color: var(--text-dark); /* Dark text for readability */
+  width: 80%;
+  max-width: 600px;
 }
 
+/* Lesson Buttons Grid */
 .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
+/* Lesson Buttons */
 .menu-btn {
-    background: var(--primary);
-    border: none;
-    border-radius: 10px;
-    padding: 1.5rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--text-light);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: var(--primary);
+  border: none;
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-light);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .menu-btn:hover {
-    background: var(--button-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  background: var(--button-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .menu-btn:active {
-    background: var(--button-active);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: var(--button-active);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Optional mini-titles inside the button */
+.lesson-btn-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.lesson-main-title {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+.lesson-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Lesson Section */
 .lesson-section {
-    display: none;
-    padding: 2rem;
-    background: #FFFFFF;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  display: none;
+  padding: 2rem;
+  background: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Exercise Card */
 .exercise-card {
-    margin: 1.5rem 0;
-    padding: 1.5rem;
-    border-radius: 10px;
-    background: #FFFFFF;
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Increased shadow for prominence */
-    border: 1px solid #e0e0e0; /* Added subtle border */
-    transition: transform 0.2s;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: #FFFFFF;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow for clarity */
+  border: 2px solid #2A4270; /* Stroke in dark blue */
+  transition: transform 0.2s;
 }
 
 .exercise-card:hover {
-    transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 .exercise-card::before {
-    content: "✨";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    font-size: 1.2rem;
+  content: "✨";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  font-size: 1.2rem;
 }
 
+/* For multiple-choice or text input (fallback) */
 .options-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 1rem;
-    margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
 .option-btn {
-    padding: 0.8rem;
-    border: 2px solid var(--secondary);
-    border-radius: 8px;
-    background: #FFFFFF;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
-    font-size: 1rem;
-    text-align: center;
-    color: var(--text-dark);
+  padding: 0.8rem;
+  border: 2px solid var(--secondary);
+  border-radius: 8px;
+  background: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--text-dark);
 }
 
 .option-btn:hover:not(:disabled) {
-    background: var(--secondary);
-    color: var(--text-light);
+  background: var(--secondary);
+  color: var(--text-light);
 }
 
 .option-btn:disabled {
-    cursor: default;
-    opacity: 0.6;
+  cursor: default;
+  opacity: 0.6;
 }
 
 .text-input {
-    padding: 0.8rem;
-    border: 2px solid var(--secondary);
-    border-radius: 8px;
-    font-size: 1rem;
-    width: 100%;
-    color: var(--text-dark);
+  padding: 0.8rem;
+  border: 2px solid var(--secondary);
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  color: var(--text-dark);
 }
 
 .submit-btn {
-    margin-top: 0.5rem;
-    padding: 0.6rem 1rem;
-    border: none;
-    border-radius: 8px;
-    background: var(--secondary);
-    color: var(--text-light);
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    font-size: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--secondary);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
 }
 
 .submit-btn:hover:not(:disabled) {
-    background: var(--button-hover);
-    transform: translateY(-2px);
+  background: var(--button-hover);
+  transform: translateY(-2px);
 }
 
 .submit-btn:active {
-    background: var(--button-active);
-    transform: translateY(0);
+  background: var(--button-active);
+  transform: translateY(0);
 }
 
+/* Feedback Message */
 .feedback {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
-    animation: popIn 0.3s ease;
-    font-weight: bold;
-    text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  animation: popIn 0.3s ease;
+  font-weight: bold;
+  text-align: center;
 }
 
 .feedback.correct {
-    background: var(--feedback-correct);
-    border: 2px solid var(--feedback-border-correct);
-    color: var(--text-dark);
+  background: var(--feedback-correct);
+  border: 2px solid var(--feedback-border-correct);
+  color: var(--text-dark);
 }
 
 .feedback.incorrect {
-    background: var(--feedback-incorrect);
-    border: 2px solid var(--feedback-border-incorrect);
-    color: var(--text-dark);
+  background: var(--feedback-incorrect);
+  border: 2px solid var(--feedback-border-incorrect);
+  color: var(--text-dark);
 }
 
 .try-again-btn {
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 8px;
-    background: var(--secondary);
-    color: var(--text-light);
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-size: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--secondary);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1rem;
 }
 
 .try-again-btn:hover {
-    background: var(--button-hover);
+  background: var(--button-hover);
 }
 
+/* Explanation Box */
 .explanation {
-    background: #FFFFFF;
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin: 1rem 0;
-    border-left: 5px solid var(--secondary);
-    color: var(--text-dark);
+  background: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  border-left: 5px solid var(--secondary);
+  color: var(--text-dark);
 }
 
+/* Back Button */
 .back-btn {
-    background: var(--secondary);
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    transition: background 0.3s ease, transform 0.2s ease;
-    font-size: 1rem;
-    color: var(--text-light);
+  background: var(--secondary);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+  color: var(--text-light);
 }
 
 .back-btn:hover {
-    background: var(--button-hover);
-    transform: translateY(-2px);
+  background: var(--button-hover);
+  transform: translateY(-2px);
 }
 
 footer {
-    text-align: center;
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: var(--primary);
-    border-radius: 15px;
-    color: var(--text-light);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--primary);
+  border-radius: 15px;
+  color: var(--text-light);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Animations */
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes popIn {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
+  .container {
+    padding: 10px;
+  }
 
-    h1 {
-        font-size: 2rem;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    .menu-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
 
-    .menu-btn {
-        padding: 1rem;
-        min-height: 80px;
-        font-size: 1rem;
-    }
+  .menu-btn {
+    padding: 1rem;
+    min-height: 80px;
+    font-size: 1rem;
+  }
 
-    .emoji-header {
-        font-size: 2.5rem;
-    }
+  .emoji-header {
+    font-size: 2.5rem;
+  }
 
-    .bubble {
-        font-size: 1rem;
-        width: 90%;
-    }
+  .bubble {
+    font-size: 1rem;
+    width: 90%;
+  }
 
-    .option-btn {
-        font-size: 0.9rem;
-        padding: 0.6rem;
-    }
+  .option-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
 
-    .text-input {
-        font-size: 0.9rem;
-        padding: 0.6rem;
-    }
+  .text-input {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
 
-    .submit-btn {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.8rem;
-    }
+  .submit-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
 
-    .try-again-btn {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.7rem;
-    }
+  .try-again-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.7rem;
+  }
 
-    .exercise-card {
-        padding: 1rem;
-    }
+  .exercise-card {
+    padding: 1rem;
+  }
 
-    .back-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-    }
+  .back-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
 }
