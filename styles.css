@@ -3,11 +3,11 @@
   --primary: #2A4270;
   /* Secondary Color (Bright Orange) */
   --secondary: #FF693A;
-  /* Accent (use if needed) */
+  /* Accent (Use if needed) */
   --accent: #FF693A;
   /* Background (Pearl White) */
   --background: #F6F4EE;
-  /* Text */
+  /* Text Colors */
   --text-dark: #000000;
   --text-light: #FFFFFF;
   /* Hover & Active */
@@ -47,13 +47,13 @@ header {
   padding: 1rem;
   background-color: var(--primary);
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 h1 {
   color: var(--text-light);
   font-size: 2.5rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .emoji-header {
@@ -96,11 +96,11 @@ h1 {
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
   color: var(--text-light);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .menu-btn:hover {
@@ -115,6 +115,13 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+.lesson-subtitle {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  opacity: 0.9;
+}
+
+/* Lesson Section */
 .lesson-section {
   display: none;
   padding: 2rem;
@@ -147,7 +154,7 @@ h1 {
   font-size: 1.2rem;
 }
 
-/* Multiple-choice or text input container */
+/* Options Grid (multiple-choice or text input) */
 .options-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -155,8 +162,8 @@ h1 {
   margin: 1rem 0;
 }
 
-/* Buttons for multiple-choice */
-.option-btn {
+/* Multiple-choice or puzzle word buttons */
+.option-btn, .word-btn {
   padding: 0.8rem;
   border: 2px solid var(--secondary);
   border-radius: 8px;
@@ -166,9 +173,11 @@ h1 {
   font-size: 1rem;
   text-align: center;
   color: var(--text-dark);
+  margin: 5px 0;
 }
 
-.option-btn:hover:not(:disabled) {
+.option-btn:hover:not(:disabled),
+.word-btn:hover {
   background: var(--secondary);
   color: var(--text-light);
 }
@@ -178,7 +187,6 @@ h1 {
   opacity: 0.6;
 }
 
-/* Text Input */
 .text-input {
   padding: 0.8rem;
   border: 2px solid var(--secondary);
@@ -188,7 +196,8 @@ h1 {
   color: var(--text-dark);
 }
 
-.submit-btn {
+.submit-btn,
+.submit-puzzle-btn {
   margin-top: 0.5rem;
   padding: 0.6rem 1rem;
   border: none;
@@ -200,17 +209,24 @@ h1 {
   font-size: 1rem;
 }
 
-.submit-btn:hover:not(:disabled) {
+.submit-btn:hover:not(:disabled),
+.submit-puzzle-btn:hover {
   background: var(--button-hover);
   transform: translateY(-2px);
 }
 
-.submit-btn:active {
+.submit-btn:active,
+.submit-puzzle-btn:active {
   background: var(--button-active);
   transform: translateY(0);
 }
 
-/* Feedback Section */
+.submit-btn:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* Feedback */
 .feedback {
   margin-top: 1rem;
   padding: 1rem;
@@ -295,6 +311,19 @@ footer {
   to { transform: scale(1); opacity: 1; }
 }
 
+/* Puzzle Layout (Chosen & Available Words) */
+.word-puzzle .chosen-words {
+  min-height: 40px;
+  border: 1px dashed #aaa;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  min-height: 50px;
+}
+.word-puzzle .available-words {
+  margin-bottom: 1rem;
+}
+
 /* Floating Formula Panel */
 .formula-panel {
   position: fixed;
@@ -309,7 +338,7 @@ footer {
   z-index: 9999;
 }
 
-/* The actual formula text inside */
+/* The actual formula text */
 .formula-content h3 {
   margin-bottom: 0.5rem;
 }
@@ -344,62 +373,48 @@ footer {
   background: var(--button-hover);
 }
 
-/* If you want a slide animation, e.g. .closed => transform: translateY(100%); */
-/* .formula-panel.closed { transform: translateY(100%); } */
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .container {
     padding: 10px;
   }
-
   h1 {
     font-size: 2rem;
   }
-
   .menu-grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
-
   .menu-btn {
     padding: 1rem;
     min-height: 80px;
     font-size: 1rem;
   }
-
   .emoji-header {
     font-size: 2.5rem;
   }
-
   .bubble {
     font-size: 1rem;
     width: 90%;
   }
-
-  .option-btn {
+  .option-btn, .word-btn {
     font-size: 0.9rem;
     padding: 0.6rem;
   }
-
   .text-input {
     font-size: 0.9rem;
     padding: 0.6rem;
   }
-
-  .submit-btn {
+  .submit-btn, .submit-puzzle-btn {
     font-size: 0.9rem;
     padding: 0.5rem 0.8rem;
   }
-
   .try-again-btn {
     font-size: 0.9rem;
     padding: 0.4rem 0.7rem;
   }
-
   .exercise-card {
     padding: 1rem;
   }
-
   .back-btn {
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
