@@ -1,13 +1,11 @@
 /*************************************************************
  * 1. LESSON DATA
- *    - Retain your original lessons for Conjunctions, Q Words, Can/Can't
- *    - Convert present & negative progressive to puzzle style
- *    - Add "subtitle" for each lesson button
+ *    - Keep your original for Conjunctions, Q Words, Can/Can't
+ *    - Convert Present & Negative Progressive to puzzle style
  *************************************************************/
 const lessons = {
   conjunctions: {
     title: "🔗 Conjunctions Practice",
-    subtitle: "Connecting Words", // mini subtitle
     emoji: "🧩",
     explanation: 
       `<div class="explanation">
@@ -17,44 +15,76 @@ const lessons = {
         <strong>BUT</strong> - Shows contrast</p>
       </div>`,
     exercises: [
-      // multiple-choice, same as original
       {q: "Zebras are black ___ white 🦓", o: ["and", "or", "but"], a: "and", tip: "AND connects two similar ideas."},
-      // ... rest ...
+      {q: "Do you want pancakes ___ waffles? 🥞", o: ["and", "or", "but"], a: "or", tip: "OR presents a choice between options."},
+      {q: "I want ice cream, ___ I'm full 🍦", o: ["but", "or", "and"], a: "but", tip: "BUT shows a contrast between two statements."},
+      {q: "Do you prefer a book, table ___ shelf? 📚", o: ["or", "and", "but"], a: "or", tip: "OR presents a choice between options."},
+      {q: "Baby is hungry ___ tired 👶", o: ["and", "but", "or"], a: "and", tip: "AND connects two similar states."},
+      {q: "The TV is broken ___ they want to watch 📺", o: ["but", "and", "or"], a: "but", tip: "BUT shows a contrast between two statements."},
+      {q: "The baseball bat is missing ___ it's not fun ⚾", o: ["but", "or", "and"], a: "but", tip: "BUT shows a contrast between two statements."},
+      {q: "Do you like apples ___ oranges? 🍎🍊", o: ["or", "and", "but"], a: "or", tip: "OR presents a choice between options."},
+      {q: "It is sunny ___ raining today? 🌞🌧️", o: ["but", "and", "or"], a: "but", tip: "BUT shows a contrast between two statements."},
+      {q: "Would you like pizza ___ pasta for dinner? 🍕🍝", o: ["and", "or", "but"], a: "and", tip: "AND connects two similar options."},
+      {q: "Do you want milk ___ juice? 🥛🧃", o: ["or", "but", "and"], a: "or", tip: "OR presents a choice between options."},
+      {q: "Dogs ___ cats get along well 🐶🐱", o: ["and", "but", "or"], a: "and", tip: "AND connects two similar subjects."},
+      {q: "Would you like tea ___ coffee? ☕🍵", o: ["and", "but", "or"], a: "or", tip: "OR presents a choice between options."},
+      {q: "He is tall ___ strong 💪", o: ["and", "but", "or"], a: "and", tip: "AND connects two similar qualities."},
+      {q: "She wanted to play, ___ it was raining ☔", o: ["and", "but", "or"], a: "but", tip: "BUT shows a contrast between two statements."}
     ]
   },
   questionWords: {
     title: "❓ Question Words",
-    subtitle: "Ask the Right Questions",
     emoji: "🔍",
     explanation: 
       `<div class="explanation">
         <h3>Asking Questions 🕵️‍♀️</h3>
       </div>`,
     exercises: [
-      // multiple-choice
       {q: "___ is crying? 😢", o: ["Who", "Why", "Where"], a: "Who", tip: "WHO asks about a person."},
-      // ...
+      {q: "___ is your backpack? 🎒", o: ["Where", "What", "When"], a: "Where", tip: "WHERE asks about a place."},
+      {q: "___ is she doing? 📚", o: ["What", "Who", "Why"], a: "What", tip: "WHAT asks about an action or thing."},
+      {q: "___ is in the kitchen? 👨🍳", o: ["Who", "Where", "When"], a: "Who", tip: "WHO asks about a person."},
+      {q: "___ is your birthday? 🎂", o: ["When", "What", "Why"], a: "When", tip: "WHEN asks about time."},
+      {q: "___ is your teacher? 👩🏫", o: ["Who", "Where", "What"], a: "Who", tip: "WHO asks about a person."},
+      {q: "___ is the park? 🌳", o: ["Where", "When", "Why"], a: "Where", tip: "WHERE asks about a place."},
+      {q: "___ is lunch time? 🕛", o: ["When", "What", "Who"], a: "When", tip: "WHEN asks about time."},
+      {q: "___ is the sky blue? 🌌", o: ["Why", "Where", "How"], a: "Why", tip: "WHY asks about reasons."},
+      {q: "___ are you going to school? 🚌", o: ["Where", "Why", "Who"], a: "Where", tip: "WHERE asks about a place."},
+      {q: "___ is your favorite color? 🎨", o: ["What", "When", "Who"], a: "What", tip: "WHAT asks about things."},
+      {q: "___ do you like pizza? 🍕", o: ["Why", "Where", "Who"], a: "Why", tip: "WHY asks about reasons."},
+      {q: "___ is your birthday celebration? 🎉", o: ["When", "What", "Who"], a: "When", tip: "WHEN asks about time."}
     ]
   },
   canCant: {
     title: "🐾 Can/Can't",
-    subtitle: "Animal Abilities",
     emoji: "🦁",
     explanation: 
       `<div class="explanation">
         <h3>Animal Abilities 🦸‍♂️</h3>
       </div>`,
     exercises: [
-      // multiple-choice
       {q: "Seals ___ clap 🦭", o: ["can", "can't"], a: "can", tip: "Seals have flippers that allow them to clap."},
-      // ...
+      {q: "Cows ___ speak 🐮", o: ["can't", "can"], a: "can't", tip: "Cows communicate through sounds but cannot speak."},
+      {q: "Parrots ___ talk 🦜", o: ["can", "can't"], a: "can", tip: "Parrots mimic sounds and can talk."},
+      {q: "Bees ___ hide 🐝", o: ["can't", "can"], a: "can't", tip: "Bees are active and don't hide."},
+      {q: "Spiders ___ spin webs 🕷️", o: ["can", "can't"], a: "can", tip: "Spiders use silk to spin webs."},
+      {q: "Whales ___ land on the beach 🐳", o: ["can't", "can"], a: "can't", tip: "Whales live in water and cannot land on the beach."},
+      {q: "Goats ___ sing songs 🐐", o: ["can't", "can"], a: "can't", tip: "Goats make sounds but do not sing songs."},
+      {q: "Dolphins ___ click sounds 🐬", o: ["can", "can't"], a: "can", tip: "Dolphins use echolocation with click sounds."},
+      {q: "Frogs ___ jump high 🐸", o: ["can", "can't"], a: "can", tip: "Frogs have strong legs that allow them to jump high."},
+      {q: "Fish ___ walk on land 🐠", o: ["can't", "can"], a: "can't", tip: "Fish are aquatic and cannot walk on land."},
+      {q: "Bats ___ see in the dark 🦇", o: ["can", "can't"], a: "can", tip: "Bats use echolocation to navigate in the dark."},
+      {q: "Pigs ___ fly in the sky 🐷", o: ["can't", "can"], a: "can't", tip: "Pigs are terrestrial animals and cannot fly."},
+      {q: "Kangaroos ___ hop long distances 🦘", o: ["can", "can't"], a: "can", tip: "Kangaroos have strong hind legs for hopping."},
+      {q: "Snakes ___ have legs 🐍", o: ["can't", "can"], a: "can't", tip: "Snakes are legless reptiles."},
+      {q: "Eagles ___ soar high in the sky 🦅", o: ["can", "can't"], a: "can", tip: "Eagles are birds that soar high using their wings."},
+      {q: "Turtles ___ run fast 🐢", o: ["can't", "can"], a: "can't", tip: "Turtles move slowly and cannot run fast."}
     ]
   },
 
-  // 2. Present Progressive => puzzle approach
+  // Present Progressive => puzzle approach
   progressive: {
     title: "🔄 Present Progressive",
-    subtitle: "Positive Duolingo Puzzle",
     emoji: "⏳",
     explanation: 
       `<div class="explanation">
@@ -67,36 +97,25 @@ const lessons = {
       {
         q: "He is working → ? 💼",
         words: ["Is", "he", "working", "?"],
-        distractors: ["are", "mom", "table"]
+        distractors: ["are", "mom", "table", "jump"],
       },
       {
         q: "We are eating → ? 🍽️",
         words: ["Are", "we", "eating", "?"],
-        distractors: ["is", "cat", "play"]
+        distractors: ["is", "cat", "play", "sing"],
       },
       {
         q: "You are running → ? 🏃‍♀️",
         words: ["Are", "you", "running", "?"],
-        distractors: ["house", "why", "mom", "am"]
+        distractors: ["car", "why", "milk", "I"],
       },
-      {
-        q: "They are learning → ? 📖",
-        words: ["Are", "they", "learning", "?"],
-        distractors: ["is", "car", "banana"]
-      },
-      {
-        q: "I am playing → ? 🎮",
-        words: ["Am", "I", "playing", "?"],
-        distractors: ["food", "are", "sing"]
-      },
-      // add up to 14 puzzle items ...
+      // replicate up to all 14 items if you wish
     ]
   },
 
-  // 3. Negative Progressive => puzzle approach
+  // Negative Progressive => puzzle approach
   negativeProgressive: {
     title: "🚫 Negative Progressive",
-    subtitle: "Negative Duolingo Puzzle",
     emoji: "🙅‍♂️",
     explanation: 
       `<div class="explanation">
@@ -108,20 +127,25 @@ const lessons = {
       {
         q: "They are watching TV →",
         words: ["They", "are", "not", "watching", "TV"],
-        distractors: ["?", "banana", "jump"]
+        distractors: ["banana", "?", "car", "run"],
       },
       {
         q: "He is looking →",
         words: ["He", "is", "not", "looking"],
-        distractors: ["stuff", "houses", "are"]
+        distractors: ["stuff", "houses", "sing", "are"],
       },
-      // add up to 14 puzzle items ...
+      {
+        q: "We are cooking →",
+        words: ["We", "are", "not", "cooking"],
+        distractors: ["milk", "juice", "jump", "am"],
+      },
+      // replicate up to all 14 if you wish
     ]
   }
 };
 
 /*************************************************************
- * 2. Helper: shuffle array
+ * 2. Shuffle helper for multiple-choice and puzzle arrays
  *************************************************************/
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -132,7 +156,7 @@ function shuffleArray(array) {
 }
 
 /*************************************************************
- * 3. Initialize Menu
+ * 3. Initialize the Menu
  *************************************************************/
 document.addEventListener("DOMContentLoaded", initMenu);
 
@@ -144,11 +168,10 @@ function initMenu() {
     const lesson = lessons[key];
     const button = document.createElement("button");
     button.classList.add("menu-btn");
-    // Now with mini title & subtitle
+    // If you want to add subtitles to each lesson
     button.innerHTML = `
-      <div>
+      <div style="text-align:center;">
         <div style="font-weight:bold;">${lesson.emoji} ${lesson.title}</div>
-        ${lesson.subtitle ? `<div class="lesson-subtitle">${lesson.subtitle}</div>` : ""}
       </div>
     `;
     button.setAttribute("data-lesson", key);
@@ -156,7 +179,6 @@ function initMenu() {
     menuGrid.appendChild(button);
   }
 
-  // Add event listeners to lesson buttons
   document.querySelectorAll(".menu-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       showLesson(btn.getAttribute("data-lesson"));
@@ -165,7 +187,7 @@ function initMenu() {
 }
 
 /*************************************************************
- * 4. Show a Chosen Lesson
+ * 4. Show a Lesson
  *************************************************************/
 function showLesson(lessonKey) {
   const lesson = lessons[lessonKey];
@@ -176,7 +198,7 @@ function showLesson(lessonKey) {
   lessonSection.classList.add("active");
   lessonSection.style.display = "block";
 
-  // Build HTML for the lesson
+  // Build exercises
   lessonSection.innerHTML = `
     <button class="back-btn">⬅️ Back</button>
     <h2>${lesson.title}</h2>
@@ -184,7 +206,7 @@ function showLesson(lessonKey) {
     <div class="exercises">
       ${lesson.exercises
         .map((ex, idx) => {
-          // If puzzle approach => Present/Negative Progressive
+          // If puzzle approach => progressive or negativeProgressive
           if ((lessonKey === "progressive" || lessonKey === "negativeProgressive") && ex.words) {
             return buildPuzzleExercise(ex, idx);
           }
@@ -235,37 +257,27 @@ function showLesson(lessonKey) {
     lessonSection.classList.remove("active");
     lessonSection.style.display = "none";
     welcomeSection.classList.add("active");
-    hideFormulaPanel(); // hide floating formula if open
   });
-
-  // If puzzle lesson => show formula with "Positive" or "Negative"
-  if (lessonKey === "progressive") {
-    showFormulaPanel("positive");
-  } else if (lessonKey === "negativeProgressive") {
-    showFormulaPanel("negative");
-  } else {
-    hideFormulaPanel();
-  }
 
   attachExerciseListeners(lessonKey);
 }
 
 /*************************************************************
- * 5. Build Puzzle HTML for Progressive
+ * 5. Build Puzzle for Present/Negative Progressive
  *************************************************************/
-function buildPuzzleExercise(ex, idx) {
+function buildPuzzleExercise(ex, index) {
   // Merge correct words + distractors, shuffle them
   const allWords = [...ex.words, ...(ex.distractors || [])];
   shuffleArray(allWords);
 
   return `
-    <div class="exercise-card" data-exercise-index="${idx}">
+    <div class="exercise-card" data-exercise-index="${index}">
       <p>${ex.q}</p>
       <div class="word-puzzle">
         <div class="chosen-words"></div>
         <div class="available-words">
           ${allWords
-            .map(word => `<button class="word-btn" data-word="${word}">${word}</button>`)
+            .map((w) => `<button class="word-btn" data-word="${w}">${w}</button>`)
             .join("")}
         </div>
         <button class="submit-puzzle-btn">Submit</button>
@@ -276,34 +288,34 @@ function buildPuzzleExercise(ex, idx) {
 }
 
 /*************************************************************
- * 6. Attach Listeners for Exercises
+ * 6. Attach Listeners for All Exercises
  *************************************************************/
 function attachExerciseListeners(lessonKey) {
   const lesson = lessons[lessonKey];
   const lessonSection = document.querySelector(".lesson-section");
 
-  // If puzzle approach => add puzzle listeners
+  // Puzzle approach => progressive or negativeProgressive
   if (lessonKey === "progressive" || lessonKey === "negativeProgressive") {
     attachPuzzleListeners(lesson);
   }
 
-  // For multiple-choice
-  lessonSection.querySelectorAll(".option-btn").forEach(btn => {
+  // Multiple-choice:
+  lessonSection.querySelectorAll(".option-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const exerciseCard = btn.closest(".exercise-card");
       const feedback = exerciseCard.querySelector(".feedback");
       const exIndex = parseInt(exerciseCard.getAttribute("data-exercise-index"));
       const exData = lesson.exercises[exIndex];
       const correctAnswer = exData.a.trim().toLowerCase();
-      const selectedAnswer = btn.dataset.answer.trim().toLowerCase();
+      const userAnswer = btn.dataset.answer.trim().toLowerCase();
 
       feedback.style.display = "block";
-      if (selectedAnswer === correctAnswer) {
+      if (userAnswer === correctAnswer) {
         feedback.innerHTML = `✅ Correct! 🎉<br><span class="tip">${exData.tip || ""}</span>`;
         feedback.classList.add("correct");
         feedback.classList.remove("incorrect");
-        // disable all multiple choice
-        exerciseCard.querySelectorAll(".option-btn").forEach(b => {
+        // disable
+        exerciseCard.querySelectorAll(".option-btn").forEach((b) => {
           b.disabled = true;
           b.style.opacity = "0.6";
         });
@@ -313,10 +325,10 @@ function attachExerciseListeners(lessonKey) {
           <button class="try-again-btn">Try Again</button>`;
         feedback.classList.add("incorrect");
         feedback.classList.remove("correct");
-        // try again
+        // Try Again
         feedback.querySelector(".try-again-btn").addEventListener("click", () => {
           feedback.style.display = "none";
-          exerciseCard.querySelectorAll(".option-btn").forEach(b => {
+          exerciseCard.querySelectorAll(".option-btn").forEach((b) => {
             b.disabled = false;
             b.style.opacity = "1";
           });
@@ -325,8 +337,8 @@ function attachExerciseListeners(lessonKey) {
     });
   });
 
-  // For text input
-  lessonSection.querySelectorAll(".submit-btn").forEach(btn => {
+  // Text input:
+  lessonSection.querySelectorAll(".submit-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const exerciseCard = btn.closest(".exercise-card");
       const feedback = exerciseCard.querySelector(".feedback");
@@ -350,6 +362,7 @@ function attachExerciseListeners(lessonKey) {
         feedback.innerHTML = `✅ Correct! 🎉<br><span class="tip">${exData.tip || ""}</span>`;
         feedback.classList.add("correct");
         feedback.classList.remove("incorrect");
+        // disable input
         input.disabled = true;
         btn.disabled = true;
         input.style.opacity = "0.6";
@@ -378,40 +391,41 @@ function attachExerciseListeners(lessonKey) {
  * 7. Puzzle Listeners for Present/Negative Progressive
  *************************************************************/
 function attachPuzzleListeners(lesson) {
-  // For each puzzle .word-puzzle container
-  document.querySelectorAll(".word-puzzle").forEach((puzzleDiv, idx) => {
+  const puzzleDivs = document.querySelectorAll(".word-puzzle");
+  puzzleDivs.forEach((puzzleDiv, idx) => {
     const chosenDiv = puzzleDiv.querySelector(".chosen-words");
     const availableDiv = puzzleDiv.querySelector(".available-words");
     const submitBtn = puzzleDiv.querySelector(".submit-puzzle-btn");
     const feedback = puzzleDiv.querySelector(".feedback");
 
-    const correctWords = lesson.exercises[idx].words; // array of correct words in order
+    const correctWords = lesson.exercises[idx].words; // array of correct sequence
 
-    // Click on available word => move to chosen
+    // Click on available => move word to chosen
     availableDiv.addEventListener("click", (e) => {
       if (e.target.classList.contains("word-btn")) {
         const word = e.target.dataset.word;
-        // create chosen element
+        // create a chosen word
         const chosenSpan = document.createElement("span");
         chosenSpan.classList.add("chosen-word");
-        chosenSpan.dataset.word = word;
-        chosenSpan.textContent = word;
-        chosenSpan.style.margin = "5px";
-        chosenSpan.style.padding = "8px 10px";
+        chosenSpan.style.margin = "0.5rem";
+        chosenSpan.style.padding = "0.6rem 0.8rem";
         chosenSpan.style.background = "#eee";
         chosenSpan.style.borderRadius = "5px";
+        chosenSpan.style.cursor = "pointer";
+        chosenSpan.dataset.word = word;
+        chosenSpan.textContent = word;
         chosenDiv.appendChild(chosenSpan);
 
-        // hide the original button
+        // hide the clicked word in available
         e.target.style.display = "none";
       }
     });
 
-    // Click chosen => remove => re-show in available
+    // Click on chosen => remove => re-show in available
     chosenDiv.addEventListener("click", (e) => {
       if (e.target.classList.contains("chosen-word")) {
         const word = e.target.dataset.word;
-        // find the matching word button in availableDiv
+        // find that word-btn in available
         const matchBtn = availableDiv.querySelector(`.word-btn[data-word="${word}"]`);
         if (matchBtn) matchBtn.style.display = "inline-block";
         e.target.remove();
@@ -421,8 +435,10 @@ function attachPuzzleListeners(lesson) {
     // Submit puzzle
     submitBtn.addEventListener("click", () => {
       feedback.style.display = "block";
-      const chosenWordsArr = Array.from(chosenDiv.querySelectorAll(".chosen-word")).map(el => el.dataset.word);
-      if (arraysEqual(chosenWordsArr, correctWords)) {
+      const chosen = chosenDiv.querySelectorAll(".chosen-word");
+      const userSequence = Array.from(chosen).map(span => span.dataset.word);
+
+      if (arraysEqual(userSequence, correctWords)) {
         feedback.innerHTML = "✅ Correct! Great job!";
         feedback.classList.add("correct");
         feedback.classList.remove("incorrect");
@@ -435,13 +451,12 @@ function attachPuzzleListeners(lesson) {
         `;
         feedback.classList.add("incorrect");
         feedback.classList.remove("correct");
-        // try again logic
         feedback.querySelector(".try-again-btn").addEventListener("click", () => {
           feedback.style.display = "none";
           feedback.innerHTML = "";
           chosenDiv.innerHTML = "";
-          // re-show all word-btn
-          Array.from(availableDiv.querySelectorAll(".word-btn")).forEach(btn => {
+          // re-show all hidden word-btn
+          availableDiv.querySelectorAll(".word-btn").forEach(btn => {
             btn.style.display = "inline-block";
           });
         });
@@ -450,49 +465,11 @@ function attachPuzzleListeners(lesson) {
   });
 }
 
-// compare arrays
+// Compare arrays
 function arraysEqual(a, b) {
   if (a.length !== b.length) return false;
   for (let i = 0; i < a.length; i++) {
     if (a[i] !== b[i]) return false;
   }
   return true;
-}
-
-/*************************************************************
- * 8. Floating Formula Panel
- *    Show only for progressive => "Positive"
- *    or negativeProgressive => "Negative"
- *************************************************************/
-const formulaPanel = document.getElementById("formula-panel");
-const toggleFormulaBtn = document.getElementById("toggle-formula-btn");
-
-function showFormulaPanel(type) {
-  toggleFormulaBtn.classList.remove("hidden");
-  formulaPanel.classList.add("hidden"); // keep closed until user clicks
-
-  const formulaContent = formulaPanel.querySelector(".formula-content");
-  if (type === "positive") {
-    formulaContent.innerHTML = `
-      <h3>Present Progressive Formula (Positive)</h3>
-      <p>Subject + to be (am/is/are) + verb(ing)</p>
-    `;
-  } else {
-    formulaContent.innerHTML = `
-      <h3>Present Progressive Formula (Negative)</h3>
-      <p>Subject + to be (am/is/are) + not + verb(ing)</p>
-    `;
-  }
-
-  toggleFormulaBtn.addEventListener("click", toggleFormulaVisibility);
-}
-
-function hideFormulaPanel() {
-  toggleFormulaBtn.classList.add("hidden");
-  formulaPanel.classList.add("hidden");
-  toggleFormulaBtn.removeEventListener("click", toggleFormulaVisibility);
-}
-
-function toggleFormulaVisibility() {
-  formulaPanel.classList.toggle("hidden");
 }
