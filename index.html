@@ -39,15 +39,16 @@
     </footer>
   </div>
 
-  <!-- Floating "Pista" panel at bottom (hidden by default) -->
-  <div id="pista-panel" class="pista-panel hidden">
-    <div class="pista-content">
-      <!-- We'll dynamically fill formula/tips for present progressive or negative progressive from script.js -->
+  <!-- Collapsible "Tip" panel at the bottom (hidden for normal lessons) -->
+  <div id="tip-panel" class="tip-panel closed">
+    <div class="tip-toggle-bar" id="tip-toggle-bar">
+      <span id="tip-toggle-text">Show Tip</span>
+      <!-- The entire bar is clickable to toggle. -->
+    </div>
+    <div class="tip-content" id="tip-content">
+      <!-- We'll insert formula text from script.js if present/negative progressive -->
     </div>
   </div>
-
-  <!-- Button to toggle the Pista panel -->
-  <button id="pista-toggle-btn" class="pista-toggle-btn hidden">Pista</button>
 
   <!-- Main Script -->
   <script src="script.js"></script>
