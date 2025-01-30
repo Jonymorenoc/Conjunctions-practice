@@ -1,10 +1,13 @@
 /*************************************************************
- * 1. Lesson Data
- * Use puzzle data for progressive & negativeProgressive
+ * 1. LESSON DATA
+ *    - Retain your original lessons for Conjunctions, Q Words, Can/Can't
+ *    - Convert present & negative progressive to puzzle style
+ *    - Add "subtitle" for each lesson button
  *************************************************************/
 const lessons = {
   conjunctions: {
     title: "🔗 Conjunctions Practice",
+    subtitle: "Connecting Words", // mini subtitle
     emoji: "🧩",
     explanation: 
       `<div class="explanation">
@@ -14,84 +17,118 @@ const lessons = {
         <strong>BUT</strong> - Shows contrast</p>
       </div>`,
     exercises: [
+      // multiple-choice, same as original
       {q: "Zebras are black ___ white 🦓", o: ["and", "or", "but"], a: "and", tip: "AND connects two similar ideas."},
-      // ... rest of your multiple-choice ...
+      // ... rest ...
     ]
   },
   questionWords: {
     title: "❓ Question Words",
+    subtitle: "Ask the Right Questions",
     emoji: "🔍",
     explanation: 
       `<div class="explanation">
         <h3>Asking Questions 🕵️‍♀️</h3>
       </div>`,
     exercises: [
+      // multiple-choice
       {q: "___ is crying? 😢", o: ["Who", "Why", "Where"], a: "Who", tip: "WHO asks about a person."},
-      // ... rest ...
+      // ...
     ]
   },
   canCant: {
     title: "🐾 Can/Can't",
+    subtitle: "Animal Abilities",
     emoji: "🦁",
     explanation: 
       `<div class="explanation">
         <h3>Animal Abilities 🦸‍♂️</h3>
       </div>`,
     exercises: [
+      // multiple-choice
       {q: "Seals ___ clap 🦭", o: ["can", "can't"], a: "can", tip: "Seals have flippers that allow them to clap."},
-      // ... rest ...
+      // ...
     ]
   },
-  
-  // Present Progressive => puzzle approach
+
+  // 2. Present Progressive => puzzle approach
   progressive: {
     title: "🔄 Present Progressive",
+    subtitle: "Positive Duolingo Puzzle",
     emoji: "⏳",
-    // We'll embed the puzzle formula in a floating panel, so no explanation needed here
+    explanation: 
+      `<div class="explanation">
+        <h3>Right Now Actions 🏃‍♂️</h3>
+        <p>Form questions with:
+        <strong>Am/Is/Are</strong> + verb+ing + ?<br>
+        Example: "She <u>is playing</u> → Is she playing?"</p>
+      </div>`,
     exercises: [
       {
         q: "He is working → ? 💼",
         words: ["Is", "he", "working", "?"],
-        distractors: ["are", "cat", "house", "jump"]
+        distractors: ["are", "mom", "table"]
       },
       {
         q: "We are eating → ? 🍽️",
         words: ["Are", "we", "eating", "?"],
-        distractors: ["is", "milk", "dance", "running"]
+        distractors: ["is", "cat", "play"]
       },
-      // add as many as needed (14 total) ...
+      {
+        q: "You are running → ? 🏃‍♀️",
+        words: ["Are", "you", "running", "?"],
+        distractors: ["house", "why", "mom", "am"]
+      },
+      {
+        q: "They are learning → ? 📖",
+        words: ["Are", "they", "learning", "?"],
+        distractors: ["is", "car", "banana"]
+      },
+      {
+        q: "I am playing → ? 🎮",
+        words: ["Am", "I", "playing", "?"],
+        distractors: ["food", "are", "sing"]
+      },
+      // add up to 14 puzzle items ...
     ]
   },
 
-  // Negative Progressive => puzzle approach
+  // 3. Negative Progressive => puzzle approach
   negativeProgressive: {
     title: "🚫 Negative Progressive",
+    subtitle: "Negative Duolingo Puzzle",
     emoji: "🙅‍♂️",
+    explanation: 
+      `<div class="explanation">
+        <h3>Saying "Not Now" 🙅‍♀️</h3>
+        <p>Add <strong>not</strong> before verb+ing<br>
+        Example: "They <u>are not</u> watching."</p>
+      </div>`,
     exercises: [
       {
         q: "They are watching TV →",
         words: ["They", "are", "not", "watching", "TV"],
-        distractors: ["banana", "?", "sleeping", "jump"]
+        distractors: ["?", "banana", "jump"]
       },
       {
         q: "He is looking →",
         words: ["He", "is", "not", "looking"],
-        distractors: ["houses", "cat", "milk", "are"]
+        distractors: ["stuff", "houses", "are"]
       },
-      // add as many as needed (14 total) ...
+      // add up to 14 puzzle items ...
     ]
   }
 };
 
 /*************************************************************
- * 2. Shuffle Helper
+ * 2. Helper: shuffle array
  *************************************************************/
-function shuffleArray(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    [array[i], array[j]] = [array[j], array[i]];
   }
-  return arr;
+  return array;
 }
 
 /*************************************************************
@@ -107,12 +144,19 @@ function initMenu() {
     const lesson = lessons[key];
     const button = document.createElement("button");
     button.classList.add("menu-btn");
-    button.innerHTML = `${lesson.emoji} ${lesson.title.split(" ")[0]} ${lesson.emoji}`;
+    // Now with mini title & subtitle
+    button.innerHTML = `
+      <div>
+        <div style="font-weight:bold;">${lesson.emoji} ${lesson.title}</div>
+        ${lesson.subtitle ? `<div class="lesson-subtitle">${lesson.subtitle}</div>` : ""}
+      </div>
+    `;
     button.setAttribute("data-lesson", key);
     button.setAttribute("aria-label", lesson.title);
     menuGrid.appendChild(button);
   }
 
+  // Add event listeners to lesson buttons
   document.querySelectorAll(".menu-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       showLesson(btn.getAttribute("data-lesson"));
@@ -132,32 +176,30 @@ function showLesson(lessonKey) {
   lessonSection.classList.add("active");
   lessonSection.style.display = "block";
 
-  // We only embed a small explanation if it's not puzzle-based or if you want it
-  // For puzzle-based lessons, we can keep it minimal or you can add text
-  let explanationHtml = "";
-  if (lessonKey !== "progressive" && lessonKey !== "negativeProgressive") {
-    explanationHtml = lesson.explanation || "";
-  }
-
+  // Build HTML for the lesson
   lessonSection.innerHTML = `
     <button class="back-btn">⬅️ Back</button>
     <h2>${lesson.title}</h2>
-    ${explanationHtml}
+    ${lesson.explanation || ""}
     <div class="exercises">
       ${lesson.exercises
         .map((ex, idx) => {
+          // If puzzle approach => Present/Negative Progressive
           if ((lessonKey === "progressive" || lessonKey === "negativeProgressive") && ex.words) {
             return buildPuzzleExercise(ex, idx);
-          } else if (ex.o) {
-            // multiple-choice
+          }
+
+          // Otherwise, fallback to multiple-choice / text
+          if (ex.o) {
+            // multiple-choice => randomize
             shuffleArray(ex.o);
             return `
               <div class="exercise-card" data-exercise-index="${idx}">
                 <p>${ex.q}</p>
                 <div class="options-grid">
-                  ${ex.o.map(oVal => `
-                    <button class="option-btn" data-answer="${oVal.toLowerCase()}">${oVal}</button>
-                  `).join("")}
+                  ${ex.o
+                    .map(opt => `<button class="option-btn" data-answer="${opt.toLowerCase()}">${opt}</button>`)
+                    .join("")}
                 </div>
                 <div class="feedback" style="display:none;"></div>
               </div>
@@ -193,10 +235,10 @@ function showLesson(lessonKey) {
     lessonSection.classList.remove("active");
     lessonSection.style.display = "none";
     welcomeSection.classList.add("active");
-    hideFormulaPanel();
+    hideFormulaPanel(); // hide floating formula if open
   });
 
-  // If puzzle-based => show floating panel for formula
+  // If puzzle lesson => show formula with "Positive" or "Negative"
   if (lessonKey === "progressive") {
     showFormulaPanel("positive");
   } else if (lessonKey === "negativeProgressive") {
@@ -209,23 +251,21 @@ function showLesson(lessonKey) {
 }
 
 /*************************************************************
- * 5. Build Puzzle for Present/Negative Progressive
+ * 5. Build Puzzle HTML for Progressive
  *************************************************************/
-function buildPuzzleExercise(ex, index) {
-  // Combine correct words + distractors, shuffle
+function buildPuzzleExercise(ex, idx) {
+  // Merge correct words + distractors, shuffle them
   const allWords = [...ex.words, ...(ex.distractors || [])];
   shuffleArray(allWords);
 
   return `
-    <div class="exercise-card" data-exercise-index="${index}">
+    <div class="exercise-card" data-exercise-index="${idx}">
       <p>${ex.q}</p>
       <div class="word-puzzle">
-        <div class="chosen-words" style="min-height:40px; border:1px dashed #aaa; padding:10px; margin-bottom:1rem; border-radius:5px;"></div>
-        <div class="available-words" style="margin-bottom:1rem;">
+        <div class="chosen-words"></div>
+        <div class="available-words">
           ${allWords
-            .map(
-              (w) => `<button class="word-btn" data-word="${w}">${w}</button>`
-            )
+            .map(word => `<button class="word-btn" data-word="${word}">${word}</button>`)
             .join("")}
         </div>
         <button class="submit-puzzle-btn">Submit</button>
@@ -236,46 +276,47 @@ function buildPuzzleExercise(ex, index) {
 }
 
 /*************************************************************
- * 6. Attach Listeners
+ * 6. Attach Listeners for Exercises
  *************************************************************/
 function attachExerciseListeners(lessonKey) {
+  const lesson = lessons[lessonKey];
   const lessonSection = document.querySelector(".lesson-section");
 
-  // If puzzle approach => attach puzzle logic
+  // If puzzle approach => add puzzle listeners
   if (lessonKey === "progressive" || lessonKey === "negativeProgressive") {
-    attachPuzzleListeners(lessons[lessonKey]);
+    attachPuzzleListeners(lesson);
   }
 
   // For multiple-choice
-  lessonSection.querySelectorAll(".option-btn").forEach((btn) => {
+  lessonSection.querySelectorAll(".option-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const exerciseCard = btn.closest(".exercise-card");
       const feedback = exerciseCard.querySelector(".feedback");
       const exIndex = parseInt(exerciseCard.getAttribute("data-exercise-index"));
-      const currentEx = lessons[lessonKey].exercises[exIndex];
-      const correctAnswer = currentEx.a.trim().toLowerCase();
+      const exData = lesson.exercises[exIndex];
+      const correctAnswer = exData.a.trim().toLowerCase();
       const selectedAnswer = btn.dataset.answer.trim().toLowerCase();
 
       feedback.style.display = "block";
       if (selectedAnswer === correctAnswer) {
-        feedback.innerHTML = `✅ Correct!<br><span class="tip">${currentEx.tip || ""}</span>`;
+        feedback.innerHTML = `✅ Correct! 🎉<br><span class="tip">${exData.tip || ""}</span>`;
         feedback.classList.add("correct");
         feedback.classList.remove("incorrect");
-        // disable
-        exerciseCard.querySelectorAll(".option-btn").forEach((b) => {
+        // disable all multiple choice
+        exerciseCard.querySelectorAll(".option-btn").forEach(b => {
           b.disabled = true;
           b.style.opacity = "0.6";
         });
       } else {
-        feedback.innerHTML = `❌ Incorrect! The correct answer is: "${currentEx.a}".<br>
-          <span class="tip">${currentEx.tip || ""}</span>
+        feedback.innerHTML = `❌ Incorrect! The correct answer is: "${exData.a}".<br>
+          <span class="tip">${exData.tip || ""}</span>
           <button class="try-again-btn">Try Again</button>`;
         feedback.classList.add("incorrect");
         feedback.classList.remove("correct");
         // try again
         feedback.querySelector(".try-again-btn").addEventListener("click", () => {
           feedback.style.display = "none";
-          exerciseCard.querySelectorAll(".option-btn").forEach((b) => {
+          exerciseCard.querySelectorAll(".option-btn").forEach(b => {
             b.disabled = false;
             b.style.opacity = "1";
           });
@@ -285,26 +326,28 @@ function attachExerciseListeners(lessonKey) {
   });
 
   // For text input
-  lessonSection.querySelectorAll(".submit-btn").forEach((btn) => {
+  lessonSection.querySelectorAll(".submit-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const exerciseCard = btn.closest(".exercise-card");
       const feedback = exerciseCard.querySelector(".feedback");
       const input = exerciseCard.querySelector(".text-input");
       const exIndex = parseInt(exerciseCard.getAttribute("data-exercise-index"));
-      const currentEx = lessons[lessonKey].exercises[exIndex];
-      const correctAnswer = currentEx.a.trim().toLowerCase();
+      const exData = lesson.exercises[exIndex];
+      const correctAnswer = exData.a.trim().toLowerCase();
 
       if (!input) return;
-      const userAnswer = input.value.trim().toLowerCase();
       feedback.style.display = "block";
+      const userAnswer = input.value.trim().toLowerCase();
+
       if (!userAnswer) {
         feedback.innerHTML = "❗ Please type an answer.";
         feedback.classList.add("incorrect");
         feedback.classList.remove("correct");
         return;
       }
+
       if (userAnswer === correctAnswer) {
-        feedback.innerHTML = `✅ Correct!<br><span class="tip">${currentEx.tip || ""}</span>`;
+        feedback.innerHTML = `✅ Correct! 🎉<br><span class="tip">${exData.tip || ""}</span>`;
         feedback.classList.add("correct");
         feedback.classList.remove("incorrect");
         input.disabled = true;
@@ -312,8 +355,8 @@ function attachExerciseListeners(lessonKey) {
         input.style.opacity = "0.6";
         btn.style.opacity = "0.6";
       } else {
-        feedback.innerHTML = `❌ Incorrect! The correct answer is: "${currentEx.a}".<br>
-          <span class="tip">${currentEx.tip || ""}</span>
+        feedback.innerHTML = `❌ Incorrect! The correct answer is: "${exData.a}".<br>
+          <span class="tip">${exData.tip || ""}</span>
           <button class="try-again-btn">Try Again</button>`;
         feedback.classList.add("incorrect");
         feedback.classList.remove("correct");
@@ -332,31 +375,31 @@ function attachExerciseListeners(lessonKey) {
 }
 
 /*************************************************************
- * 7. Puzzle Listeners for Progressive
+ * 7. Puzzle Listeners for Present/Negative Progressive
  *************************************************************/
-function attachPuzzleListeners(lessonData) {
-  // puzzle containers
+function attachPuzzleListeners(lesson) {
+  // For each puzzle .word-puzzle container
   document.querySelectorAll(".word-puzzle").forEach((puzzleDiv, idx) => {
     const chosenDiv = puzzleDiv.querySelector(".chosen-words");
     const availableDiv = puzzleDiv.querySelector(".available-words");
     const submitBtn = puzzleDiv.querySelector(".submit-puzzle-btn");
     const feedback = puzzleDiv.querySelector(".feedback");
 
-    const correctWords = lessonData.exercises[idx].words;
+    const correctWords = lesson.exercises[idx].words; // array of correct words in order
 
-    // click on available word => move to chosen
+    // Click on available word => move to chosen
     availableDiv.addEventListener("click", (e) => {
       if (e.target.classList.contains("word-btn")) {
         const word = e.target.dataset.word;
-        // create chosen span
+        // create chosen element
         const chosenSpan = document.createElement("span");
         chosenSpan.classList.add("chosen-word");
+        chosenSpan.dataset.word = word;
+        chosenSpan.textContent = word;
         chosenSpan.style.margin = "5px";
         chosenSpan.style.padding = "8px 10px";
         chosenSpan.style.background = "#eee";
         chosenSpan.style.borderRadius = "5px";
-        chosenSpan.dataset.word = word;
-        chosenSpan.textContent = word;
         chosenDiv.appendChild(chosenSpan);
 
         // hide the original button
@@ -364,43 +407,40 @@ function attachPuzzleListeners(lessonData) {
       }
     });
 
-    // click chosen word => remove from chosen, re-show in available
+    // Click chosen => remove => re-show in available
     chosenDiv.addEventListener("click", (e) => {
       if (e.target.classList.contains("chosen-word")) {
         const word = e.target.dataset.word;
-        // re-show the button
+        // find the matching word button in availableDiv
         const matchBtn = availableDiv.querySelector(`.word-btn[data-word="${word}"]`);
         if (matchBtn) matchBtn.style.display = "inline-block";
-        // remove from chosen
         e.target.remove();
       }
     });
 
-    // Submit the puzzle
+    // Submit puzzle
     submitBtn.addEventListener("click", () => {
       feedback.style.display = "block";
-      const chosen = chosenDiv.querySelectorAll(".chosen-word");
-      const userSequence = Array.from(chosen).map((span) => span.dataset.word);
-
-      if (arraysEqual(userSequence, correctWords)) {
+      const chosenWordsArr = Array.from(chosenDiv.querySelectorAll(".chosen-word")).map(el => el.dataset.word);
+      if (arraysEqual(chosenWordsArr, correctWords)) {
         feedback.innerHTML = "✅ Correct! Great job!";
         feedback.classList.add("correct");
         feedback.classList.remove("incorrect");
         submitBtn.disabled = true;
       } else {
-        feedback.classList.add("incorrect");
-        feedback.classList.remove("correct");
         feedback.innerHTML = `
           ❌ Incorrect!<br>
           The correct answer is: "${correctWords.join(" ")}".
           <br><button class="try-again-btn">Try Again</button>
         `;
-        // reset puzzle
+        feedback.classList.add("incorrect");
+        feedback.classList.remove("correct");
+        // try again logic
         feedback.querySelector(".try-again-btn").addEventListener("click", () => {
           feedback.style.display = "none";
           feedback.innerHTML = "";
           chosenDiv.innerHTML = "";
-          // re-enable words
+          // re-show all word-btn
           Array.from(availableDiv.querySelectorAll(".word-btn")).forEach(btn => {
             btn.style.display = "inline-block";
           });
@@ -421,9 +461,8 @@ function arraysEqual(a, b) {
 
 /*************************************************************
  * 8. Floating Formula Panel
- *  - Show only if lessonKey = progressive or negativeProgressive
- *  - If progressive => Positive formula
- *  - If negativeProgressive => Negative formula
+ *    Show only for progressive => "Positive"
+ *    or negativeProgressive => "Negative"
  *************************************************************/
 const formulaPanel = document.getElementById("formula-panel");
 const toggleFormulaBtn = document.getElementById("toggle-formula-btn");
@@ -432,28 +471,25 @@ function showFormulaPanel(type) {
   toggleFormulaBtn.classList.remove("hidden");
   formulaPanel.classList.add("hidden"); // keep closed until user clicks
 
-  // Fill in formula text based on type
   const formulaContent = formulaPanel.querySelector(".formula-content");
   if (type === "positive") {
     formulaContent.innerHTML = `
-      <h3>Formula (Positive)</h3>
+      <h3>Present Progressive Formula (Positive)</h3>
       <p>Subject + to be (am/is/are) + verb(ing)</p>
     `;
   } else {
     formulaContent.innerHTML = `
-      <h3>Formula (Negative)</h3>
-      <p>Subject + to be (am/is/are) + <strong>not</strong> + verb(ing)</p>
+      <h3>Present Progressive Formula (Negative)</h3>
+      <p>Subject + to be (am/is/are) + not + verb(ing)</p>
     `;
   }
 
-  // Listen for toggle
   toggleFormulaBtn.addEventListener("click", toggleFormulaVisibility);
 }
 
 function hideFormulaPanel() {
   toggleFormulaBtn.classList.add("hidden");
   formulaPanel.classList.add("hidden");
-  // remove event listener
   toggleFormulaBtn.removeEventListener("click", toggleFormulaVisibility);
 }
 
