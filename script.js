@@ -1,12 +1,16 @@
 /*************************************************************
- * 1. LESSON DATA
+ * 1. LESSON DATA (15 questions each)
+ *    - Retains your original multiple-choice or text approach
+ *    - Present & Negative Progressive => puzzle style
  *************************************************************/
 const lessons = {
-  // 1) Conjunctions (15)
+  /**********************************************************
+   * 1) Conjunctions (15 multiple-choice questions)
+   **********************************************************/
   conjunctions: {
     title: "🔗 Conjunctions Practice",
     emoji: "🧩",
-    explanation: 
+    explanation:
       `<div class="explanation">
         <h3>Connecting Words Fun! 🌉</h3>
         <p><strong>AND</strong> - Joins similar ideas<br>
@@ -32,11 +36,13 @@ const lessons = {
     ]
   },
 
-  // 2) Question Words (15)
+  /**********************************************************
+   * 2) Question Words (15 multiple-choice questions)
+   **********************************************************/
   questionWords: {
     title: "❓ Question Words",
     emoji: "🔍",
-    explanation: 
+    explanation:
       `<div class="explanation">
         <h3>Asking Questions 🕵️‍♀️</h3>
       </div>`,
@@ -59,11 +65,13 @@ const lessons = {
     ]
   },
 
-  // 3) Can/Can't (15)
+  /**********************************************************
+   * 3) Can/Can't (15 multiple-choice questions)
+   **********************************************************/
   canCant: {
     title: "🐾 Can/Can't",
     emoji: "🦁",
-    explanation: 
+    explanation:
       `<div class="explanation">
         <h3>Animal Abilities 🦸‍♂️</h3>
       </div>`,
@@ -86,21 +94,24 @@ const lessons = {
     ]
   },
 
-  // 4) Present Progressive => puzzle approach (15 items)
+  /**********************************************************
+   * 4) Present Progressive => puzzle approach (15 items)
+   **********************************************************/
   progressive: {
     title: "🔄 Present Progressive",
     emoji: "⏳",
-    explanation: 
+    explanation:
       `<div class="explanation">
         <h3>Right Now Actions</h3>
-        <p>Form questions with: <strong>Am/Is/Are</strong> + verb+ing + ?<br>
+        <p>Form questions with:
+        <strong>Am/Is/Are</strong> + verb+ing + ?<br>
         Example: "She <u>is playing</u> → Is she playing?"</p>
       </div>`,
     exercises: [
       {
         q: "He is working → ? 💼",
         words: ["Is", "he", "working", "?"],
-        distractors: ["are", "mom", "table"],
+        distractors: ["are", "mom", "table", "jump"],
       },
       {
         q: "We are eating → ? 🍽️",
@@ -175,11 +186,13 @@ const lessons = {
     ]
   },
 
-  // 5) Negative Progressive => puzzle approach (15 items)
+  /**********************************************************
+   * 5) Negative Progressive => puzzle approach (15 items)
+   **********************************************************/
   negativeProgressive: {
     title: "🚫 Negative Progressive",
     emoji: "🙅‍♂️",
-    explanation: 
+    explanation:
       `<div class="explanation">
         <h3>Saying "Not Now"</h3>
         <p>Add <strong>not</strong> before verb+ing<br>
@@ -289,7 +302,6 @@ function initMenu() {
     const lesson = lessons[key];
     const button = document.createElement("button");
     button.classList.add("menu-btn");
-    // Show lesson's emoji & short title
     button.innerHTML = `
       <div style="text-align:center;">
         <div style="font-weight:bold;">${lesson.emoji} ${lesson.title}</div>
@@ -377,19 +389,19 @@ function showLesson(lessonKey) {
     lessonSection.classList.remove("active");
     lessonSection.style.display = "none";
     welcomeSection.classList.add("active");
-    hidePista();
+    hideTipPanel();
   });
 
-  // If progressive => show Pista with Positive formula
+  // If progressive => show tip with "Positive" formula
   if (lessonKey === "progressive") {
-    showPista("positive");
+    showTipPanel("positive");
   } 
-  // If negativeProgressive => show Pista with Negative formula
+  // If negativeProgressive => show tip with "Negative" formula
   else if (lessonKey === "negativeProgressive") {
-    showPista("negative");
+    showTipPanel("negative");
   } 
   else {
-    hidePista();
+    hideTipPanel();
   }
 
   attachExerciseListeners(lessonKey);
@@ -432,7 +444,7 @@ function attachExerciseListeners(lessonKey) {
     attachPuzzleListeners(lesson);
   }
 
-  // Multiple-choice
+  // Multiple-choice:
   lessonSection.querySelectorAll(".option-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const exerciseCard = btn.closest(".exercise-card");
@@ -470,7 +482,7 @@ function attachExerciseListeners(lessonKey) {
     });
   });
 
-  // Text input
+  // Text input:
   lessonSection.querySelectorAll(".submit-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const exerciseCard = btn.closest(".exercise-card");
@@ -530,13 +542,12 @@ function attachPuzzleListeners(lesson) {
     const submitBtn = puzzleDiv.querySelector(".submit-puzzle-btn");
     const feedback = puzzleDiv.querySelector(".feedback");
 
-    const correctWords = lesson.exercises[idx].words; // correct array
+    const correctWords = lesson.exercises[idx].words;
 
     // Click on available => move to chosen
     availableDiv.addEventListener("click", (e) => {
       if (e.target.classList.contains("word-btn")) {
         const word = e.target.dataset.word;
-        // create chosen
         const chosenSpan = document.createElement("span");
         chosenSpan.classList.add("chosen-word");
         chosenSpan.style.margin = "0.5rem";
@@ -553,11 +564,10 @@ function attachPuzzleListeners(lesson) {
       }
     });
 
-    // Click chosen => remove => re-show
+    // Click chosen => remove => re-show in available
     chosenDiv.addEventListener("click", (e) => {
       if (e.target.classList.contains("chosen-word")) {
         const word = e.target.dataset.word;
-        // re-show in available
         const matchBtn = availableDiv.querySelector(`.word-btn[data-word="${word}"]`);
         if (matchBtn) matchBtn.style.display = "inline-block";
         e.target.remove();
@@ -567,10 +577,9 @@ function attachPuzzleListeners(lesson) {
     // Submit puzzle
     submitBtn.addEventListener("click", () => {
       feedback.style.display = "block";
-      const chosen = chosenDiv.querySelectorAll(".chosen-word");
-      const userSequence = Array.from(chosen).map(span => span.dataset.word);
+      const chosenWordsArr = Array.from(chosenDiv.querySelectorAll(".chosen-word")).map(span => span.dataset.word);
 
-      if (arraysEqual(userSequence, correctWords)) {
+      if (arraysEqual(chosenWordsArr, correctWords)) {
         feedback.innerHTML = `✅ Correct! Great job!`;
         feedback.classList.add("correct");
         feedback.classList.remove("incorrect");
@@ -606,42 +615,55 @@ function arraysEqual(a, b) {
 }
 
 /*************************************************************
- * 8. "Pista" Panel for Progressive
- *    - If lessonKey is "progressive" => Positive formula
- *    - If lessonKey is "negativeProgressive" => Negative formula
+ * 8. "Tip" Panel at Bottom (Collapsible with "Show Tip"/"Hide Tip")
  *************************************************************/
-const pistaPanel = document.getElementById("pista-panel");
-const pistaContent = document.querySelector(".pista-content");
-const pistaToggleBtn = document.getElementById("pista-toggle-btn");
+const tipPanel = document.getElementById("tip-panel");
+const tipToggleBar = document.getElementById("tip-toggle-bar");
+const tipToggleText = document.getElementById("tip-toggle-text");
+const tipContent = document.getElementById("tip-content");
 
-function showPista(type) {
-  pistaToggleBtn.classList.remove("hidden");
-  pistaPanel.classList.add("hidden"); // keep hidden until user toggles
+/** Called when user enters a progressive lesson */
+function showTipPanel(type) {
+  tipPanel.classList.remove("open", "closed");
+  tipPanel.classList.add("closed"); // start collapsed
+  tipPanel.style.display = "block"; // ensure it's visible
 
-  // Fill the panel
+  // Fill the tip content
   if (type === "positive") {
-    pistaContent.innerHTML = `
+    tipContent.innerHTML = `
       <h3>Present Progressive (Positive)</h3>
       <p>Subject + to be (am/is/are) + verb(ing)</p>
-      <p>For example: "He is working → Is he working?"</p>
+      <p>Example: "He is working → Is he working?"</p>
     `;
   } else {
-    pistaContent.innerHTML = `
+    tipContent.innerHTML = `
       <h3>Present Progressive (Negative)</h3>
-      <p>Subject + to be (am/is/are) + <strong>not</strong> + verb(ing)</p>
-      <p>For example: "They are not watching."</p>
+      <p>Subject + to be (am/is/are) + not + verb(ing)</p>
+      <p>Example: "They are not watching."</p>
     `;
   }
 
-  pistaToggleBtn.addEventListener("click", togglePista);
+  tipToggleText.textContent = "Show Tip";
+  tipToggleBar.addEventListener("click", toggleTipPanel);
 }
 
-function hidePista() {
-  pistaToggleBtn.classList.add("hidden");
-  pistaPanel.classList.add("hidden");
-  pistaToggleBtn.removeEventListener("click", togglePista);
+/** Called when user leaves a progressive lesson or hits back */
+function hideTipPanel() {
+  tipPanel.classList.remove("open", "closed");
+  tipPanel.style.display = "none";
+  tipToggleBar.removeEventListener("click", toggleTipPanel);
 }
 
-function togglePista() {
-  pistaPanel.classList.toggle("hidden");
+function toggleTipPanel() {
+  if (tipPanel.classList.contains("closed")) {
+    // Expand
+    tipPanel.classList.remove("closed");
+    tipPanel.classList.add("open");
+    tipToggleText.textContent = "Hide Tip";
+  } else {
+    // Collapse
+    tipPanel.classList.remove("open");
+    tipPanel.classList.add("closed");
+    tipToggleText.textContent = "Show Tip";
+  }
 }
